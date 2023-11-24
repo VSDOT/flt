@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterForm</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/Register.css') }}">
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class=".model-fullscreen-xxl-down form-container">
+        <div class="row">
+            <div class="div1 col-md-6">
+                <div class="buttons">
+                    <button class="button1"><a href="{{url_for('login')}}">LogIn</a></button><br>
+                    <button class="button2"><a href="{{url_for('home')}}">Home</a></button><br>
+                </div>
+                <img src="{{url_for('static',filename='images/register.png')}}" alt="" class="w-75 img-container"
+                    style="margin-left: 5rem;padding-top: 15rem;">
+            </div>
+            <div class="div2 col-md-6">
+                <div class="row">
+                    <div class="col bg-img1">
+                        <img src="{{url_for('static',filename='images/bg-img1.png')}}" alt="" style="width:50rem;">
+                    </div>
+                    <div class="col bg-img2">
+                        <img src="{{url_for('static',filename='images/bg-img2.png')}}" alt="" style="width: 42rem;">
+                    </div>
+                    <div class="col" style="margin-right: 0;">
+                        <!-- formInputes -->
+                        <main>
+                        <form id="form" action="/register" method="POST">
+                            <div class="container">
+                                
+                                    <!-- <div class="form"> -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="179" height="179"
+                                        viewBox="0 0 179 179" fill="none" style="margin-top: -3rem;">
+                                        <rect width="179" height="179" />
+                                        <circle cx="89.5" cy="74.5833" r="22.375" stroke="white" stroke-width="3"
+                                            stroke-linecap="round" />
+                                        <circle cx="89.5" cy="89.5" r="67.125" stroke="white" stroke-width="3" />
+                                        <path
+                                            d="M134.25 139.515C131.61 131.585 125.794 124.579 117.703 119.581C109.612 114.584 99.6985 111.875 89.5 111.875C79.3015 111.875 69.388 114.584 61.2969 119.581C53.2059 124.579 47.3896 131.585 44.75 139.515"
+                                            stroke="white" stroke-width="3" stroke-linecap="round" />
+                                    </svg>
+                                    <div class="input-group">
+                                        <div class="row">
+                                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            			{% for category, message in messages %}
+                                			{% if category == 'danger' %}
+                                    				<div style="color: red;">{{ message }}</div>
+                                			{% endif %}
+                            			{% endfor %}
+                        		{% endwith %}
+                                            <label for="UserName">USER NAME</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" id="UserName" class="form-control" name="username"
+                                                placeholder="User Name" style="width: 19rem;" />
+                                            <span class="error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="row">
+                                            <label for="email">EMAIL ID</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" id="userEmail" class="form-control" name="email"
+                                                placeholder="User Email" style="width: 19rem;" />
+                                            <span class="error"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="row">
+                                            <label for="password">PASSWORD</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="password" id="txtPassword" class="form-control"
+                                                name="password" placeholder="password" style="width: 19rem;" />
+                                            <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon"
+                                                    class="fa fa-eye"></i></button>
+                                            <div class="row">
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="row">
+                                            <label for="cpassword">CONFIRM PASSWORD</label>
+                                        </div>
+                                        <div class="row">
+                                            <input type="password" id="txtPassword1" class="form-control input4"
+                                                name="confirm" placeholder="Confirm password"
+                                                style="width: 19rem;" />
+                                            <button type="button" id="btnToggle1" class="toggle"><i id="eyeIcon1"
+                                                    class="fa fa-eye"></i></button>
+                                            <div class="row">
+                                                <span class="error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg bg-success" style="color: white;"> Create Account</button> 
+                                
+                            </div>
+                        </form>
+                        </main>
+                    </div>
+                    <!-- formInputes -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{{ url_for('static',filename='js/others/Register.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+@media only screen and (max-width: 600px){
+    .CardCol1{
+        display:block;
+        flex-direction: column;
+    }
+    #card1{
+        margin-bottom: 15px;
+    }
+    .Cards #card2 button{
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+    .Form{
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/LogIn.css') }}">
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row">
+            <div class="div1 col-md-6">
+                <div class="bg-img" style="width: 102%;">
+                    <div class="buttons d-flex align-items-center justify-content-center" style="gap:20px;">
+                        <button class="button1"><a href="{{url_for('home')}}">Home</a></button>
+                        <button class="button2"><a href="{{url_for('register')}}"
+                                style="color: #02669e;">Register</a></button><br>
+                    </div>
+                    <div class="col content">
+                        <span><span style="position: relative;left: 1rem;">V</span><span>V</span>elcom Back !</span><br>
+                        <p>To stay connected with us <br>please login with your personal info</p><br>
+                        <button type="button" class="Sign-in"> Sign In</button><br>
+                        <a href="#"> Create Account</a>
+                        <div class="social-icons">
+                            <a href="#" title="facebook">
+                                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" title="linkedin">
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" title="linkedin">
+                                <i class="fa-brands fa-google" aria-hidden="true" style="color: #ffffff;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2 col-md-6">
+                <!-- formInputes -->
+                <main>
+                    <div class="container">
+                        <form name="form" id="form" action="login" method="POST">
+                            <!-- <div class="form"> -->
+                            <div class="col d-flex align-items-center justify-content-center"
+                                style="flex-direction: column;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"
+                                    fill="none">
+                                    <circle cx="75" cy="62.5" r="18.75" fill="#222222" />
+                                    <circle cx="75" cy="75" r="56.25" stroke="#222222" stroke-width="1.2" />
+                                    <path
+                                        d="M112.369 115.937C112.741 115.675 112.89 115.194 112.715 114.774C110.386 109.19 105.637 104.267 99.1339 100.713C92.3537 97.0082 84.0462 95 75.5 95C66.9538 95 58.6463 97.0082 51.8662 100.713C45.3632 104.267 40.6138 109.19 38.2847 114.774C38.1095 115.194 38.2592 115.675 38.6307 115.937L52.4106 125.678C66.2493 135.461 84.7507 135.461 98.5894 125.678L112.369 115.937Z"
+                                        fill="#7E869E" fill-opacity="0.25" stroke="#222222" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <h2>Let's Get Started</h2>
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                            		{% for category, message in messages %}
+                                		{% if category == 'danger' %}
+                                    			<div style="color: red;">{{ message }}</div>
+                                		{% endif %}
+                            		{% endfor %}
+                        	{% endwith %}
+                            </div>
+                            <div class="input-group">
+                                <div class="col d-flex" style="gap: 1rem;position: relative;left: -10px;">
+                                    <div class="col">
+                                        <h4>Email</h4>
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" class="form-control" id="UserName" name="email"
+                                            placeholder="email" style="width: 19rem;" />
+                                        <span class="error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                 <div class="col d-flex" style="gap: 1rem;">
+                                    <div class="col">
+                                        <h4>Password</h4>
+                                    </div>
+                                    <div class="col">
+                                        <input type="password" id="txtPassword" class="form-control"
+                                            name="password" placeholder="password" style="width: 19rem;" />
+                                        <button type="button" id="btnToggle" class="toggle"><i id="eyeIcon"
+                                                class="fa fa-eye"></i></button>
+                                        <div class="row">
+                                            <span class="error"></span>
+                                        </div>
+                                 </div>
+                                </div>
+                            </div>
+                            <div class="col input-3 d-flex mt-2 ms-3" style="gap: 10px;width: 15rem;">
+                                <div class="g-recaptcha" id="captcha" data-sitekey="6LeG-VYeAAAAAEcDTm_b4dcBzFSNCtYKDFDKZocE"></div>                            
+                            </div>
+                            <!-- <div class="row">
+                                <span id="UserMessage3">Enter Valid Details</span>
+                            </div> -->
+                            <button type="submit" class="btn btn-lg"
+                                style="color: white;background-color: #02669e;">LogIn</button>
+                        </form>
+                        <!-- </div> -->
+                        <div class="col d-flex align-items-center mt-5"
+                            style="justify-content: space-between;color: gray;">
+                            <p>Forgot your password ?</p>
+                            <p>Not a Member Yet ?</p>
+                        </div>
+                    </div>
+                </main>
+                <!-- formInputes -->
+            </div>
+        </div>
+    </div>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+    <script src="{{ url_for('static',filename='js/others/Login.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

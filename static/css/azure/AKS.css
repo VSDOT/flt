@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Back-Img{
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:80%;
+    height: 45rem;
+    margin: 0 auto;
+}
+.Form-Content{
+   position: absolute;
+   right: 0;
+   top: 20px; 
+   padding: 50px 0;
+}
+form {
+    background-color:rgb(187,215,247,0.6);
+    backdrop-filter: blur(3px);
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 0;
+    padding: 30px 20px;
+}
+
+form header img {
+    width: 50px;
+    height: 50px;
+}
+
+form label {
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
+    padding: 12px 30px;
+}
+
+form input {
+    width: 16rem;
+    display: flex;
+    align-items: left;
+    /* margin-right: 30px; */
+    margin-top: 10px;
+    border: 2px solid #008cea;
+    padding: 5px 20px;
+}
+form button{
+    border: none;
+    background-color:#008cea;
+    color: white;
+    font-size: 20px;
+    padding: 10px 50px;
+    margin: 10px 0;
+}
+ .SubCreate input{ 
+  margin-top: 17px;
+  margin-right: 50px;
+}
+.SubCreate span{
+ margin-left: -50px;
+ margin-top: 16px;
+} 
+ /* DropDown button */
+.custom-select{
+    /* position: absolute; */
+    margin-right: 40px;
+    margin-top: 10px;
+    /* width: 100%; */
+    height: 38px;
+    border: 2px solid #008cea;
+}
+@media(max-width:600px){
+    .custom-select{
+        margin-left: 50px;
+    }
+    .form button{
+        margin-top: 50px;
+    }
+}
+/* DropDown button */
+/* Popup content 
+.popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.popup-content {
+    height: 320px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    border: 2px solid gray;
+    box-shadow: 0px 3px 10px 5px gray;
+}
+
+.popup .close {
+    text-decoration: none;
+    background-color: #0026ab;
+    padding: 10px 20px;
+    color: white;
+}
+
+.p_button {
+    margin-top: 50px;
+}
+
+.Mutability {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: -30px;
+}
+
+.Mutability input {
+    width: 20px;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+.Mutability span {
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.Mutability .popup-content {
+    position: absolute;
+}
+
+.p_button button {
+    border: none;
+    background-color: #0026ab;
+    /* width: 80px;
+    height: 43px; 
+    font-size: 17px;
+    padding: 10px 15px;
+}
+
+.Scan {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: -30px;
+}
+
+/* Popup content */
+
+/* error message */
+form .error{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: red;
+  }
+  /* .input-group.success input{
+    border-color: green;
+  }
+  .input-group.error input{
+    border-color: red;
+  } */
+  /* error message */
+  @media screen and (max-width: 1000px) and (min-width: 600px){
+   .drop-down{
+    margin-right: 1.4rem;
+   }
+  }

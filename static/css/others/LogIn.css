@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.container-lg img {
+    margin-top: 300px;
+    margin-left: 60px;
+}
+.container-lg {
+    border:1px solid #32425a;
+}
+ .buttons {
+    display: flex;
+    position: relative;
+    top: 5rem;
+} 
+label{
+    color: #ffff;
+}
+ .button1 {
+    width: 13rem;
+    height: 3rem;
+    background-color: #02669e;
+    border: 0;
+    outline: 0;
+}
+.button1 a{
+    color: white;
+}
+.button2 {
+    background-color: white;
+    width: 13rem;
+    height: 3rem;
+    border: 0;
+    outline: 0;
+} 
+.bg-img{
+    height: 100vh;
+    width: auto;
+    background-color: rgb(25,172,255);
+    opacity: 0.9;
+}
+.div1{
+    
+    background-image:url('../../images/registerBack.png');
+    height: 100vh;
+    background-size: contain;
+    
+}
+.content{
+    display: flex;
+    justify-content: center; 
+    line-height: 28px;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 30vh;
+}
+/* .div2 { 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-bottom: 0%;
+} */
+.div1 span{
+    font-size: 60px;
+    font-weight: 20px;
+    color: white;
+}
+.div1 .Sign-in{
+    margin-top: -20px;
+    padding: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border: none;
+    background-color: #02669e;
+    font-size: 20px;
+    color: white;
+}
+.div1 p{
+    line-height: 25px;
+    font-size: 15px;
+    color: white;
+}
+.div1 a{
+    margin-top: -20px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+/* .div2 span{
+    font-size: 20px;
+}
+.div2 button a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+} */
+.form button a{
+    text-decoration: none;
+    color: #ffff;
+}
+.LogIn{
+    background-color: #32425a;
+    padding: 10px 50px;
+    margin: 20px 100px;
+    border: none;
+    font-size: 20px;
+}
+.Links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.Links a{
+    text-decoration: none;
+    color: darkgray;
+}
+/* .div2 input{
+    border: 2px solid #02669e;
+} */
+
+.input-1{
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* formInputs */
+/* main {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    height: 100%;
+  } */
+  .container {
+    margin: 0 auto;
+  }
+  .form {
+    /* background-color:rgb(26,162,244,0.6); */
+    /* margin: 0 auto; */
+    width: 34rem;
+    height: 30rem;
+    padding: 15px 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  h2 {
+    color: #666;
+    margin-bottom: .75em;
+    text-align: center;
+  }
+  .input-group {
+    margin-top: 1.25em;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1.25em; 
+    border: 1px solid #02669e; 
+  }
+   .input-2 input{
+    width: 15rem;
+    height: 3rem;
+   }
+   .input-3{
+    margin-left: -6rem;
+   }
+   .input-3 input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0%;
+    outline: 0;
+   }
+  /* suppress IE >= 10 native functionality that can show password */
+  input[type="password"]::-ms-reveal {
+    display: none;
+
+  }
+  .btn {
+    margin-top: 1.75em;
+    width: 14rem;
+  }
+  /* .input-group {
+    position: relative;
+    width: 100%;
+  } */
+  .toggle {
+    background: none;
+    border: none;
+    color: #337ab7;
+    /*display: none;*/
+    /*font-size: .9em;*/
+    font-weight: 100;
+    /*padding: .5em;*/
+    position: absolute;
+    left: -3rem;
+    bottom: 0.5rem;
+    z-index: 9;
+  }
+  .fa {
+    font-size: 1.3rem;
+  }
+/* formInputs */
+
+
+/* error message */
+.form span{
+    display: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: red;
+    position: relative;
+    top: .2rem;
+    left: 1.5rem;
+  }
+  /* error message */

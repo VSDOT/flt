@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+.form-container {
+    position: relative;
+    border:1px solid #32425a;
+    right: 0;
+}
+.buttons {
+    display: flex;
+    position: absolute;
+    margin-top: 100px;
+    width: 50px;
+    padding: 0 5px;
+}
+.buttons button a{
+    text-decoration: none;
+    font-size: 20px;
+}
+label{
+    color: #ffff;
+}
+.button1 {
+    background-color: white;
+    border: 1px solid #02669e;
+    margin-left: 8rem;
+    padding: 7px 50px;
+    cursor: pointer;
+    position: relative;
+}
+.button1 a{
+    color:#02669e;
+    font-weight: 500;
+}
+.button2 {
+    border: white;
+    background-color: #02669e;
+    margin-left: 50px;
+    padding: 10px 50px;
+}
+.button2 a{
+    color: white;
+    font-weight: 700;
+}
+form button a{
+    text-decoration: none;
+}
+.div1{
+    background-image: url(../../images/registerBack.png);
+}
+.div2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.bg-img1{
+  position: absolute;
+  width:25rem;
+  height: 20rem;
+  left: 35rem;
+}
+.bg-img2{
+    position: absolute;
+    left: 43rem;
+    bottom: 0;
+    z-index: -1;
+}
+.icon{
+    margin: 70px 100px;
+}
+
+
+/* formInputs */
+/* main {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    height: 100%;
+  } */
+  .container {
+    margin: 0 auto;
+  }
+  form {
+    background-color:rgb(26,162,244,0.6);
+    /* margin: 0 auto; */
+    width: 45rem;
+    height: 45rem;
+    padding: 15px 13rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  h2 {
+    color: #666;
+    margin-bottom: .75em;
+    text-align: center;
+  }
+  .input-group {
+    margin-bottom: 1.25em;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    border-radius: 1px;
+    box-sizing: border-box;
+    font-size: 1.25em; 
+    background-color: rgb(242,242,242,0.7); 
+  }
+
+  /* suppress IE >= 10 native functionality that can show password */
+  input[type="password"]::-ms-reveal {
+    display: none;
+
+  }
+  .btn {
+    margin-top: 1.75em;
+  }
+  /* .input-group {
+    position: relative;
+    width: 100%;
+  } */
+  .toggle {
+    background: none;
+    border: none;
+    color: #337ab7;
+    /*display: none;*/
+    /*font-size: .9em;*/
+    font-weight: 100;
+    /*padding: .5em;*/
+    position: absolute;
+    margin-left: 7rem;
+    top: 2.2rem;
+    z-index: 9;
+  }
+  .fa {
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+  }
+/* formInputs */
+
+/* error message */
+form .error{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: red;
+}
+/* .input-group.success input{
+  border-color: green;
+}
+.input-group.error input{
+  border-color: red;
+} */
+/* error message */

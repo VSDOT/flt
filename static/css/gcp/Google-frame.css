@@ -1,0 +1,182 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+/* .form-container{
+    height: 40rem;
+} */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.heading span {
+    font-family: Poppins,sans-serif;
+    font-weight: 700;
+}
+.heading p{
+    font-weight: 700;
+}
+.heading input {
+    width: 15rem;
+    padding-left: 10px;
+    height: 35px;
+    border: 2px solid #0038EF;
+    border-radius: 5px;
+    outline: 0;
+}
+
+/* .top-img img{
+    position: relative;
+    width: 35rem;
+    height: 20rem;
+}
+.bottom-img img{
+    width: 35rem;
+    height: 20rem;
+} */
+.Button-frame {
+    height: auto;
+    position: relative;
+    /* top: 5rem; */
+    left: 2.5rem;
+}
+
+.btn-box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 22.7rem;
+    overflow-x: hidden;
+    background-color: white;
+    z-index: 1;
+}
+
+.btn-box button {
+    width: 18rem;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #0038EF;
+    background: none;
+    margin: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    padding-left: 2rem;
+}
+.btn-box button:active,
+.btn-box button:focus {
+    background-color: #c3ddfb;
+    color: #0038EF;
+    height: 3rem;
+    /* Change to desired color */
+}
+.btn-box a{
+    text-decoration: none;
+}
+.btn-box a button{
+    text-decoration: none;
+    color: #0038EF;
+    font-size: 20px;
+    transition: background-color 0.1s;
+}
+
+iframe {
+    height: 55rem;
+    padding-left: 50px;
+    margin-left: 10px;
+    background: transparent;
+}
+
+/* SearchBox */
+.search {
+    position: relative;
+    color: #aaa;
+    font-size: 16px;
+  }
+  .search {display: inline-block;}
+  
+  .search input {
+    width: 250px;
+    height: 32px;
+  
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  }
+  
+  .search input { text-indent: 32px;}
+  .search .fa-search { 
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .search .fa-search {left: auto; right: 10px;}
+/* SearchBox */
+
+
+/* search-2 */
+form-search{
+    margin: 0 auto;
+    text-align: center;
+
+    font: bold 13px sans-serif;
+     max-width: 70%;
+    position: relative;
+}
+
+.form-search input{
+    width: 14rem;
+    height: 3rem;
+    box-sizing: border-box;
+    background-color:  #ffffff;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding-right: 10px;
+    border: 1px solid #0038EF;
+    /* border-right: 0; */
+    color:#4E565C;
+    outline: none;
+    margin-left: 2rem;
+    /* -webkit-appearance: none; */
+}
+
+.form-search button{
+    /* border-bottom-right-radius: 2px;
+    /* border-top-right-radius: 2px; */
+    background: none;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    color: #ffffff;
+    padding: 10px 10px;
+    /* margin-left: -4px; */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: relative;
+    left: -3.2rem;
+    top: -.2rem;
+}
+
+
+
+/* search */
+input.search {
+    width: 260px;
+    border: 1px solid #0038EF;
+    display: block;
+    padding: 10px 10px 10px 50px;
+    background: transparent url("../../images/GcpSearch.png") no-repeat 1px;
+}
+

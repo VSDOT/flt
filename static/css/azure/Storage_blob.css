@@ -1,0 +1,168 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .Back-Img{
+        position: relative;
+        background-image: url("../../images/blob-img.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width:80%;
+        height: 45rem;
+        margin: 0 auto;
+    }
+    .Form-Content{
+    position: absolute;
+    right: 0;
+    top: 20px; 
+    }
+    form {
+        background-color:rgb(187,215,247,0.6);
+        backdrop-filter: blur(3px);
+        position: absolute;
+        width: 100%;
+        height: auto;
+        right: 0;
+        padding: 50px 0;
+    }
+
+    form header img {
+        width: 50px;
+        height: 50px;
+    }
+
+    form label {
+        color: black;
+        font-weight: 500;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-top: 15px;
+        padding: 12px 15px;
+    }
+
+    form input {
+        width: 18rem;
+        display: flex;
+        align-items: left;
+        margin-right: 40px;
+        margin-top: 10px;
+        border: 2px solid #008cea;
+        padding: 5px 20px;
+    }
+    form button{
+        border: none;
+        background-color:#008cea;
+        color: white;
+        font-size: 20px;
+        padding: 10px 40px;
+        margin: 10px 0;
+    }
+    .SubCreate{
+        box-sizing: border-box;
+    }
+    .SubCreate input{ 
+    margin-top: 17px;
+    margin-left: 50px;
+    /* margin-right: 50px; */
+    }
+    .SubCreate span{
+    margin-top: 16px;
+    /* margin-left: -15px; */
+    } 
+    /* DropDown button */
+    .custom-select{
+        /* position: absolute; */
+        margin-right: 40px;
+        margin-top: 10px;
+        width: 100%;
+        height: 38px;
+        border: 2px solid #008cea;
+    }
+    @media (max-width:578px){
+        .SubCreate input,span{
+            margin-right: 60px;
+            margin-bottom: 50px;
+        }
+    }
+    /* DropDown button */
+
+    /* radio Button */
+
+
+    label {
+        display: inline-block;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    
+    label span {
+        position: relative;
+        line-height: 10px;
+        right: 50px;
+    }
+    
+    label span:before,
+    label span:after {
+        content: '';
+        margin-top: 5px;
+    }
+    
+    label span:before {
+        border: 1px solid #008cea;
+        width: 20px;
+        height: 20px;
+        margin-right:10px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    label span:after {
+        background: #008cea;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        transition: 300ms;
+        opacity: 0;
+    }
+    
+    label input:checked+span:after {
+        opacity: 1;
+    }
+    @media(max-width:800px){
+        .SubCreate span{
+        margin-right:5rem;
+        /* margin-left: -2rem; */
+        }
+        /* .radio-btn1{
+        margin-left: 15rem;
+        flex-direction: column;
+        } */
+        body{
+        overflow-x: hidden;
+        }
+    }
+
+
+    form .error{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: red;
+      }
+      /* .input-group.success input{
+        border-color: green;
+      }
+      .input-group.error input{
+        border-color: red;
+      } */
+      
+      /* form validation */
+      @media screen and (max-width: 1000px) and (min-width: 600px){
+        .drop-down{
+         margin-right: 1.4rem;
+        }
+        /* #containerName{
+         margin-left: 11px;
+        } */
+       }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/azure/Frame.css') }}">
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+        crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(187,215,247,0.6);overflow-x: hidden;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row top-img"
+            style="float: right;z-index: -1;position: absolute;right: 0;box-sizing: border-box;right: 0;">
+            <img src="{{ url_for('static',filename='images/BG1-top.png') }}" alt="">
+        </div>
+        <div class="row">
+            <div class="col-sm-3 d-none d-sm-block Button-frame">
+                <div class="col" style="position:relative;left: 0;">
+                    <a href="{{url_for('azure.credential')}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="74" viewBox="0 0 74 74" fill="none">
+                            <ellipse cx="18.5" cy="18.5" rx="18.5" ry="18.5"
+                                transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 61.6665 55.5)" fill="#7EBFFF" />
+                            <path
+                                d="M24.3665 37C24.3665 26.617 32.7835 18.2 43.1665 18.2C53.5495 18.2 61.9665 26.617 61.9665 37C61.9665 47.383 53.5495 55.8 43.1665 55.8C32.7835 55.8 24.3665 47.383 24.3665 37Z"
+                                stroke="#7E869E" stroke-opacity="0.25" stroke-width="0.6" />
+                            <path
+                                d="M24.6665 58.3621C28.4163 60.5271 32.6699 61.6668 36.9998 61.6668C41.3297 61.6668 45.5834 60.5271 49.3332 58.3621C53.083 56.1972 56.1968 53.0833 58.3618 49.3335C60.5267 45.5837 61.6665 41.3301 61.6665 37.0002C61.6665 32.6703 60.5267 28.4166 58.3618 24.6668C56.1968 20.917 53.083 17.8032 49.3332 15.6382C45.5834 13.4733 41.3297 12.3335 36.9998 12.3335C32.6699 12.3335 28.4163 13.4732 24.6665 15.6382"
+                                stroke="#007FFF" stroke-width="3.2" />
+                            <path
+                                d="M6.1665 37.0002L4.91711 36.0007L4.1175 37.0002L4.91711 37.9997L6.1665 37.0002ZM33.9165 38.6002C34.8002 38.6002 35.5165 37.8838 35.5165 37.0002C35.5165 36.1165 34.8002 35.4002 33.9165 35.4002V38.6002ZM17.2504 20.584L4.91711 36.0007L7.41589 37.9997L19.7492 22.583L17.2504 20.584ZM4.91711 37.9997L17.2504 53.4163L19.7492 51.4173L7.41589 36.0007L4.91711 37.9997ZM6.1665 38.6002H33.9165V35.4002H6.1665V38.6002Z"
+                                fill="#007FFF" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="col heading">
+                    <div class="col" style="display: flex;justify-content: center;align-items: center;gap: 10px;">
+                        <span style="font-size: 40px;color: #008cea;">Azure</span>
+                        <p style="font-size: 20px; color: gray;margin-top: 30px;">Resource</p>
+                    </div>
+                    <!-- Search Icon -->
+                    <input class="search" type="search" placeholder="Search..." id="SearchButtons" onkeyup="myFunction()">
+                    <!-- Search Icon -->
+                    <!-- <input type="text" placeholder="Search"> -->
+                </div>
+                <div class="col" style="border:1px solid #008cea;">
+                    <div class="col btn-box" id="myUL">
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.blob')}}" target="frame1" id="button1"><button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/Storage-blog.png') }}" alt=""
+                                        style="width: 30px;">Storage
+                                    Blob</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.vm')}}" target="frame1" id="button2"><button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/VM.png') }}" alt="" style="width: 30px;">
+                                    VM</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.vnet')}}" target="frame1" id="button3"><button class="color-change-button"><img
+                                        src="{{ url_for('static',filename='images/V-net.png') }}" alt="" style="width: 30px;"> V Net</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.containerregistery')}}" target="frame1" id="button4"><button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/container-ref.png') }}" alt=""
+                                        style="width: 30px;"> Container
+                                    Registery</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.aks')}}" target="frame1" id="button5"><button class="color-change-button"><img
+                                        src="{{ url_for('static',filename='images/AKS.png') }}" alt="" style="width: 30px;">AKS</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.containerinstance')}}" target="frame1" id="button6"><button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/container-ins.png') }}" alt=""
+                                        style="width: 30px;">Container
+                                    Instance</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.appservice')}}" target="frame1" id="button7"> <button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/App.png') }}" alt=""
+                                        style="width: 30px;">App Service</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.datafactory')}}" target="frame1" id="button8"><button class="color-change-button"><img
+                                        src="{{ url_for('static',filename='images/Data-factory.png') }}" alt=""
+                                        style="width: 30px;">DataFactory</button></a>
+                        </div>
+                        <div class="col btn-div"> 
+                            <a href="{{url_for('azure.SQLserver')}}" target="frame1" id="button9"> <button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/sql-server.png') }}" alt=""
+                                        style="width: 30px;"> SQL Server</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.elasticpoll')}}" target="frame1" id="button10"> <button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/elastic.png') }}" alt=""
+                                        style="width: 30px;">Elastic Poll </button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.functionapp')}}" target="frame1" id="button11"><button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/function-app.png') }}" alt=""
+                                        style="width: 30px;">Function app</button></a>
+                        </div>
+                        <div class="col btn-div">
+                            <a href="{{url_for('azure.sqldb')}}" target="frame1" id="button12"> <button
+                                    class="color-change-button"><img src="{{ url_for('static',filename='images/Sql-database.png') }}" alt=""
+                                        style="width: 30px;">SQL Database</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col d-block d-sm-none">
+               <a href="../ContainerInstance/C_Instance.html" >ahamed</a>
+               <a href="../SqlDataBase/SqlDataBase.html">ahamed</a>
+               <a href="../Storage_blob/Storage_blob.html">ahamed</a>
+            </div> -->
+            <div class="col-sm-9 iframe-box">
+                <iframe src="" class="d-none d-sm-block" name="frame1" width="100%" height="610rem"
+                    style="border: 0;outline: 0;background: none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row bottom-img" style="float: left;z-index: -1;margin-top: -250px;">
+        <img src="{{ url_for('static',filename='images/BG1.png') }}" alt="">
+    </div>
+    </div>
+    <script src="{{url_for('static',filename='js/azure/Frame.js')}}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

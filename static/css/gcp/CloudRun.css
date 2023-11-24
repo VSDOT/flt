@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* background-colors */
+.back-blue {
+    position: relative;
+    right: 5rem;
+    left: 20rem;
+    opacity: 0.4;
+    border-radius: 704.91px;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #0038EF -10%, rgba(181, 185, 187, 0.00) 100%);
+}
+
+.back-pink {
+    position: relative;
+    top: 5rem;
+    left: 3rem;
+    opacity: 0.3;
+    margin-top: 10rem;
+    border-radius: 704.91px;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #EF0000 0%, rgba(181, 185, 187, 0.00) 100%);
+}
+
+.back-green {
+    position: relative;
+    top: -10%;
+    right: 5rem;
+    left: 15rem;
+    opacity: 0.4;
+    border-radius: 704.91px;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #21EF00 0%, rgba(181, 185, 187, 0.00) 100%);
+}
+
+.back-yellow {
+    position: relative;
+    left: 3rem;
+    opacity: 0.6;
+    margin-top: 10rem;
+    border-radius: 704.91px;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #FFF504 0%, rgba(181, 185, 187, 0.00) 100%);
+}
+
+/* background-colors */
+.Back-Img {
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 45rem;
+    margin: 0 auto;
+}
+
+.Form-Content {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.Form-Content nav {
+    background-image: linear-gradient(to right, rgb(72, 130, 236), rgb(181, 84, 102), rgb(237, 151, 14), rgb(45, 190, 37));
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+form {
+    background-color: rgb(242, 239, 240, 0.5);
+    backdrop-filter: blur(3px);
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+form header img {
+    width: 50px;
+    height: 50px;
+    margin-left: -30px;
+}
+
+form label {
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 15px;
+    padding: 12px 10px;
+}
+
+form input {
+    width: 19rem;
+    display: flex;
+    margin-right: 40px;
+    margin-top: 10px;
+    border: 2px solid #008cea;
+    padding: 5px 20px;
+    outline: 0;
+}
+
+.input-box input {
+    position: relative;
+    right: 30px;
+    top: 5px;
+    width: 5px;
+    height: 45px;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+form button {
+    border: none;
+    background-color: #035b88;
+    color: white;
+    font-size: 20px;
+    padding: 10px 40px;
+    margin-top: 30px;
+    margin-bottom:10rem;
+}
+
+.SubCreate {
+    box-sizing: border-box;
+}
+
+.SubCreate input {
+    margin-top: 17px;
+    margin-left: 70px;
+    /* margin-right: 50px; */
+}
+
+.SubCreate span {
+    margin-top: 16px;
+    margin-left: -25px;
+}
+
+/* DropDown button */
+.custom-select {
+    /* position: absolute; */
+    margin-right: 40px;
+    margin-top: 10px;
+    width: 100%;
+    height: 38px;
+    border: 2px solid #008cea;
+}
+
+/* DropDown button */
+
+@media (max-width:578px) {
+    .input-box input {
+        position: relative;
+        right: 0;
+    }
+}
+
+/* OTP field */
+.otp-field {
+    display: flex;
+    margin-left: 4.3rem;
+}
+
+.otp-field input {
+    width: 3rem;
+    height: 3rem;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    border: 2px solid #008cea;
+    background: white;
+    font-weight: bold;
+    color: black;
+    outline: none;
+    transition: all 0.1s;
+}
+
+.otp-field input:focus {
+    border: 2px solid #a527ff;
+    box-shadow: 0 0 2px 2px #a527ff6a;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.space {
+    margin-right: 1rem !important;
+}
+
+/* radio Button */
+
+
+label {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+label span {
+    position: relative;
+    line-height: 10px;
+    right: 50px;
+}
+
+label span:before,
+label span:after {
+    content: '';
+}
+
+label span:before {
+    border: 1px solid #008cea;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+label span:after {
+    background: #008cea;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    transition: 300ms;
+    opacity: 0;
+}
+
+label input:checked+span:after {
+    opacity: 1;
+}
+
+
+
+/* form Validation */
+
+form .error{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: red;
+  }
+  /* .input-group.success input{
+    border-color: green;
+  }
+  .input-group.error input{
+    border-color: red;
+  } */
+  /* error message */
+  @media screen and (max-width: 1000px) and (min-width: 600px){
+   .drop-down{
+    margin-right: 1.1rem;
+   }
+   .run-time{
+    margin-right: 1.1rem;
+   }
+  }
+
+  /****** OPTION TAG CSS *****/
+.variant, #data{
+    height:38px;
+    background-color:white;
+    border: 2px solid #008cea;
+    width:304px;
+    margin-right: 40px;
+}
+
+
+/* LOADING ANIMATION */
+
+/* templates/styles.css */
+.loading-animation {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

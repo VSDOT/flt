@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+/* .form-container{
+    height: 40rem;
+} */
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.heading input {
+    width: 15rem;
+    padding-left: 10px;
+    height: 35px;
+    border: 2px solid #008cea;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.top-img img {
+    position: relative;
+    width: 35rem;
+    height: 20rem;
+}
+
+.bottom-img img {
+    width: 35rem;
+    height: 20rem;
+}
+
+.Button-frame {
+    height: auto;
+    position: relative;
+    /* top: 5rem; */
+    left: 2.5rem;
+}
+
+.btn-box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 25rem;
+    overflow-x: hidden;
+    background-color: white;
+}
+
+.btn-box button {
+    width: 18rem;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #008cea;
+    outline: 0;
+    border-radius: 0;
+    background: none;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 15px;
+    padding-left: 2rem;
+   
+}
+
+/* Button color change */
+
+.btn-box button:active,
+.btn-box button:focus {
+    background-color: #c3ddfb;
+    color: #0038EF;
+    height: 3rem;
+    /* Change to desired color */
+}
+
+/* Button color change */
+.btn-box a button {
+    text-decoration: none;
+    color: white;
+    color: #0038EF;
+    font-size: 20px;
+    transition: background-color 0.1s;
+}
+.btn-box a{
+    text-decoration: none;
+}
+iframe {
+    height: 55rem;
+    padding-left: 50px;
+    margin-left: 10px;
+    background: transparent;
+}
+
+
+/* search */
+input.search {
+    width: 260px;
+    border: 1px solid #0038EF;
+    display: block;
+    padding: 10px 10px 10px 50px;
+    background: transparent url("../../images/GcpSearch.png") no-repeat 1px;
+}

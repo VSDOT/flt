@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/aws/Resource.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+        crossorigin="anonymous">
+</head>
+</head>
+
+<body style="background-color:#cfd7ea;">
+    <div class=".model-fullscreen-xxl-down">
+        <section class="PreLoader">
+            <div id="PreLoader"></div>
+        </section>
+        <header class="row title pt-3"
+            style="background-image: linear-gradient(to right,rgb(232,142,7),rgb(55,55,55));">
+            <div class="col d-flex align-items-center justify-content-center">
+                <h1 id="heading" class="aws mt-2 ms-2 align-items-center justify-content-center" style="color: white;">AWS</h1>
+                <img id="LogoIcon" src="{{ url_for('static',filename='images/AWS-logo.png') }}"  class="logo mt-1" style="width: 4rem;" alt="">
+                <!-- searchBoxIcon -->
+                <div class="input-box">
+                    <input type="search" id="searchInput" style="background: none;"/>
+                    <span class="search" style="background: none;">
+                        <i class="uil uil-search search-icon" id="search-icon"></i>
+                    </span>
+                    <i class="uil uil-times close-icon"></i>
+                </div>
+                <!-- searchBoxIcon -->
+            </div>
+            <div class="demo-container">
+                <nav class="col d-flex align-items-center justify-content-center mt-1 mb-3">
+                    <div class="col-3"
+                        style="border-top-left-radius: 20px;border-bottom-left-radius: 20px; height: 5px;">
+                        &nbsp;</div>
+                    <div class="col-3" style="height: 5px;">&nbsp;</div>
+                    <div class="col-3" style="height: 5px;">&nbsp;</div>
+                    <div class="col-3"
+                        style="border-top-right-radius: 20px;border-bottom-right-radius: 20px; height: 5px;">
+                        &nbsp;</div>
+                </nav>
+            </div>
+        </header>
+        <!-- NavSection -->
+        <div class="row head-input">
+            <div class="row" style="margin: 10px auto;">
+                <div class="col-sm-3">
+                    <div class="col d-flex">
+                        <a href="{{url_for('providers')}}"><svg xmlns="http://www.w3.org/2000/svg" width="55"
+                                height="56" viewBox="0 0 55 56" fill="none">
+                                <ellipse cx="14" cy="13.75" rx="14" ry="13.75"
+                                    transform="matrix(4.29308e-08 -1 -1 -4.45061e-08 45.833 42)" fill="#C5C5C9" />
+                                <path
+                                    d="M18.033 28C18.033 20.1074 24.3183 13.7 32.083 13.7C39.8477 13.7 46.133 20.1074 46.133 28C46.133 35.8926 39.8477 42.3 32.083 42.3C24.3183 42.3 18.033 35.8926 18.033 28Z"
+                                    stroke="#7E869E" stroke-opacity="0.25" stroke-width="0.6" />
+                                <path
+                                    d="M18.333 44.1659C21.12 45.8042 24.2815 46.6667 27.4997 46.6667C30.7178 46.6667 33.8793 45.8042 36.6663 44.1659C39.4534 42.5275 41.7677 40.1711 43.3768 37.3334C44.9859 34.4957 45.833 31.2767 45.833 28C45.833 24.7234 44.9859 21.5044 43.3768 18.6667C41.7677 15.829 39.4534 13.4726 36.6663 11.8342C33.8793 10.1959 30.7178 9.33337 27.4997 9.33337C24.2815 9.33337 21.12 10.1959 18.333 11.8342"
+                                    stroke="#F29101" stroke-width="2.2" />
+                                <path
+                                    d="M4.58301 28L3.71806 27.3204L3.18408 28L3.71806 28.6796L4.58301 28ZM25.208 29.1C25.8155 29.1 26.308 28.6076 26.308 28C26.308 27.3925 25.8155 26.9 25.208 26.9V29.1ZM12.8847 15.6538L3.71806 27.3204L5.44796 28.6796L14.6146 17.013L12.8847 15.6538ZM3.71806 28.6796L12.8847 40.3463L14.6146 38.9871L5.44796 27.3204L3.71806 28.6796ZM4.58301 29.1H25.208V26.9H4.58301V29.1Z"
+                                    fill="#F29101" />
+                            </svg></a>
+                        <a href="{{url_for('home')}}"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="51"
+                                viewBox="0 0 52 51" fill="none">
+                                <path
+                                    d="M10.833 27.1142C10.833 24.2289 10.833 22.7863 11.4277 21.5182C12.0223 20.2502 13.1391 19.3113 15.3727 17.4336L17.5394 15.6122C21.5766 12.2183 23.5952 10.5214 25.9997 10.5214C28.4042 10.5214 30.4228 12.2183 34.46 15.6122L36.6266 17.4336C38.8602 19.3113 39.977 20.2502 40.5717 21.5182C41.1663 22.7863 41.1663 24.2289 41.1663 27.1142V36.125C41.1663 40.1319 41.1663 42.1354 39.8971 43.3802C38.6279 44.625 36.5852 44.625 32.4997 44.625H19.4997C15.4142 44.625 13.3714 44.625 12.1022 43.3802C10.833 42.1354 10.833 40.1319 10.833 36.125V27.1142Z"
+                                    stroke="#F29101" stroke-width="2" />
+                                <path
+                                    d="M31.4163 44.625V32.875C31.4163 32.3227 30.9686 31.875 30.4163 31.875H21.583C21.0307 31.875 20.583 32.3227 20.583 32.875V44.625"
+                                    stroke="#F29101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="col-sm-9 input-form">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <div style="color: green;">{{ message }}</div>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% for category, message in messages %}
+                        {% if category == 'danger' %}
+                            <div style="color: red;">{{ message }}</div>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+                <form action="/aws" method="POST">
+                    <input type="text" name="accesskey" placeholder="Access Key">
+                    <input type="text" name="secretkey" placeholder="Secret Key"><br>
+                    <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- NavSection -->
+        <section id="content" class="content">
+            <!-- Resource Cards -->
+            <div class="row" style="margin-top: -80px;">
+                <div class="col-sm-12" id="item-list" >
+                    <div class="row d-flex align-items-center justify-content-center" style="gap: 50px;">
+                        <div class="card card2 m-1 p-3" name="vpc"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>VPC</h4>
+                                <img src="{{ url_for('static',filename='images/VPC.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button1">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card2 m-1 p-3" name="ec2"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>EC2</h4>
+                                <img src="{{ url_for('static',filename='images/EC2.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button2">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card3 m-1 p-3" name="s3-bucket"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>S3 Bucket</h4>
+                                    <img src="{{ url_for('static',filename='images/s3-bucket.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button3">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card4 m-1 p-3" name="rds"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-5 d-flex align-items-center" style="justify-content: space-around;">
+                                <h4>RDS</h4>
+                                <img src="{{ url_for('static',filename='images/RDS.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button4">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-2 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-center" style="gap: 50px;">
+                        <div class="card card5 m-1 p-3" name="eks"
+                            style="width: 12rem;border: none;background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>EKS</h4>
+                                <img src="{{ url_for('static',filename='images/EKS.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button5">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card6 m-1 p-3" name="ecr"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>ECR</h4>
+                                <img src="{{ url_for('static',filename='images/ECR.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button6">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card7 m-1 p-3" name="cloud-Watch"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Cloud Watch</h4>
+                                <img src="{{ url_for('static',filename='images/CLoud-Watch.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button7">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-1 p-3" name="Dynamo"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Dynamo DB</h4>
+                                <img src="{{ url_for('static',filename='images/DynamoDB.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button8">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-3 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-center" style="gap: 50px;">
+                        <div class="card card5 m-1 p-3" name="ECS-Service"
+                            style="width: 12rem;border: none;background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>ECS-Service</h4>
+                                <img src="{{ url_for('static',filename='images/ECS.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button9">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card6 m-1 p-3" name="ECS-Cluster"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>ECS-Cluster</h4>
+                                <img src="{{ url_for('static',filename='images/ECS.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button10">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card7 m-1 p-3" name="api"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>API Getway</h4>
+                                <img src="{{ url_for('static',filename='images/API.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button11">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-1 p-3" name="lambda"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Lambda</h4>
+                                <img src="{{ url_for('static',filename='images/lambda.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button12">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-4 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-center" style="gap: 50px;">
+                        <div class="card card5 m-1 p-3" name="sns"
+                            style="width: 12rem;border: none;background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col  pb-5 d-flex align-items-center" style="justify-content: space-between;">
+                                <h4 style="font-size: medium;">Simple Notification Service</h4>
+                                <img src="{{ url_for('static',filename='images/sns.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('aws.resources')}}" id="anchor-button13">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card6 m-1 p-3"
+                            style="width: 12rem;border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="./AWS-IFrame/aws-iframe.html">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card7 m-1 p-3"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="./AWS-IFrame/aws-iframe.html">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-1 p-3"
+                            style="width: 12rem; border: none; background-image: linear-gradient(rgb(251,151,2),rgb(94,74,45)); border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="./AWS-IFrame/aws-iframe.html">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Resource Cards -->
+        </section>
+    </div>
+    <script src="{{url_for('static',filename='js/aws/Resource.js')}}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

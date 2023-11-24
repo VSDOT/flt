@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+/* .Img-container{
+    position: sticky;
+    top: 0;
+} */
+.Img-container img {
+    position: fixed;
+    height: 40rem;
+    left: .1rem;
+}
+
+nav ul {
+    gap: 30px;
+    font-size: 20px;
+}
+
+.Service-cards {
+    position: absolute;
+    top: 40rem;
+}
+
+.Service-cards .header {
+    position: relative;
+    height: 10rem;
+    margin-top: 40px;
+    margin-bottom: -20px;
+}
+
+.header h2 {
+    position: absolute;
+    font-size: 50px;
+    color: blue;
+}
+.card-1 {
+    background-color: #cc0100;
+    height: 20rem;
+    width: 18rem;
+    margin-left: 13px;
+    padding: 80px 20px;
+    color: white;
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 15px 15px 15px;
+}
+
+.card-1 ul li::marker {
+    color: black;
+    font-size: 20px;
+}
+
+.card-head1 {
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: #cc0100;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 15px 10px;
+}
+
+.card-2 {
+
+    background-color: #924ced;
+    height: 20rem;
+    width: 18rem;
+    margin-left: 13px;
+    padding: 80px 20px;
+    color: white;
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 15px 15px 15px;
+}
+
+.card-2 ul li::marker {
+    color: black;
+    font-size: 20px;
+}
+
+.card-head2 {
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: #924ced;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 15px 10px;
+}
+
+.card-3 {
+
+    background-color: #0072f2;
+    height: 20rem;
+    width: 18rem;
+    margin-left: 13px;
+    padding: 80px 20px;
+    color: white;
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 15px 15px 15px;
+}
+
+.card-3 ul li::marker {
+    color: black;
+    font-size: 20px;
+}
+
+.card-head3 {
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: #0072f2;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 15px 10px;
+}
+
+.card-4 {
+
+    background-color: #ffab18;
+    height: 20rem;
+    width: 18rem;
+    margin-left: 13px;
+    padding: 80px 20px;
+    color: white;
+    border: 5px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 15px 15px 15px;
+}
+
+.card-4 ul li::marker {
+    color: black;
+    font-size: 20px;
+}
+
+.card-head4 {
+    position: relative;
+    top: 50px;
+    left: 100px;
+    background-color: #ffab18;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #e6e6e6;
+    box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 15px 10px;
+}
+
+.color-bar {
+    background-image: linear-gradient(to right, rgb(208, 104, 117), rgb(185, 115, 195), rgb(128, 140, 235), rgb(155, 164, 220), rgb(242, 185, 192));
+    height: 70px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* DropButton */
+/* Dropdown Button */
+.dropbtn {
+    background-color: blue;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 5px;
+    top: 40px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* DropButton */
+
+@media (max-width:600px){
+    .card-1,.card-2,.card-3,.card-4{
+        margin-left : 100px;
+    }
+    .card-head2,.card-head3,.card-head4{
+        margin-left: 80px;
+    }
+    .card-head1{
+        position: relative;
+        left: 12rem;
+    }
+    .Service-cards .header{
+        margin-left: 10px;
+    }
+}

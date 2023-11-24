@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Watch</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/aws/Cloud-watch.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+        integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+</head>
+
+<body style="background: transparent;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row-lg-6 row-12 Back-Img">
+            <!-- <div class="col-sm-6">&nbsp;</div> -->
+            <div class="col-lg-8 col-12 Form-Content">
+                <!-- <div class="form"> -->
+                <form action="/aws/cloudwatch" id="form" method="POST" target="_parent">
+                    <!-- header -->
+                    <header class="col d-flex align-items-center justify-content-center" style="flex-wrap: wrap;">
+                        <img src="{{ url_for('static',filename='images/cloud-watch.png') }}" alt="">
+                        <h1 class="ms-1 mt-2" style="color: rgb(3,1,73);">Cloud Watch</h1>
+                    </header>
+                    <nav class="col d-flex align-items-center justify-content-center ms-3 me-3 mt-3">
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                    </nav>
+                    <!-- header -->
+                    <div style="text-align: center;">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% for category, message in messages %}
+                                {% if category == 'danger' %}
+                                    <div style="color: red;">{{ message }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    <!-- input form -->
+                    <div class="col">
+                        <!-- DropDown -->
+                        <div class="col drop-down d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Region </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <div class="custom-select" style="width: 18rem;position: relative;right:12px;">
+                                <select id="select1" name="region">
+                                    <option name="option">us-east-1</option>
+                                    <option name="option" value="us-east-2">us-east-2</option>
+                                    <option name="option" value="us-east-1">us-east-1</option>
+                                    <option name="option" value="us-west-1">us-west-1</option>
+                                    <option name="option" value="us-west-2">us-west-2</option>
+                                    <option name="option" value="af-south-1">af-south-1</option>
+                                    <option name="option" value="ap-east-1">ap-east-1</option>
+                                    <option name="option" value="ap-south-2">ap-south-2</option>
+                                    <option name="option" value="ap-southeast-3">ap-southeast-3</option>
+                                    <option name="option" value="ap-southeast-4">ap-southeast-4</option>
+                                    <option name="option" value="ap-south-1">ap-south-1</option>
+                                    <option name="option" value="ap-northeast-3">ap-northeast-3</option>
+                                    <option name="option" value="ap-northeast-2">ap-northeast-2</option>
+                                    <option name="option" value="ap-southeast-1">ap-southeast-1</option>
+                                    <option name="option" value="ap-southeast-2">ap-southeast-2</option>
+                                    <option name="option" value="ap-northeast-1">ap-northeast-1</option>
+                                    <option name="option" value="ca-central-1">ca-central-1</option>
+                                    <option name="option" value="eu-central-1">eu-central-1</option>
+                                    <option name="option" value="eu-west-1">eu-west-1</option>
+                                    <option name="option" value="eu-west-2">eu-west-2</option>
+                                    <option name="option" value="eu-south-1">eu-south-1</option>
+                                    <option name="option" value="eu-west-3">eu-west-3</option>
+                                    <option name="option" value="eu-south-2">eu-south-2</option>
+                                    <option name="option" value="eu-north-1">eu-north-1</option>
+                                    <option name="option" value="eu-central-2">eu-central-2</option>
+                                    <option name="option" value="il-central-1">il-central-1</option>
+                                    <option name="option" value="me-south-1">me-south-1</option>
+                                    <option name="option" value="me-central-1">me-central-1</option>
+                                    <option name="option" value="sa-east-1">sa-east-1</option>
+                                    <option name="option" value="us-gov-east-1">us-gov-east-1</option>
+                                    <option name="option" value="us-gov-west-1">us-gov-west-1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- DropDown -->
+                        <!-- DropDown -->
+                        <div class="col drop-down d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Comparison Operator </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <div class="custom-select " style="width: 18rem;position: relative;right:12px;">
+                                <select id="select1" style="overflow-x: auto;" name="operator">
+                                    <option name="option">GreaterThanOrEqualToThreshold</option>
+                                    <option name="option" value="GreaterThanOrEqualToThreshold">
+                                        GreaterThanOrEqualToThreshold</option>
+                                    <option name="option" value="GreaterThanThreshold">GreaterThanThreshold</option>
+                                    <option name="option" value=" LessThanThreshold"> LessThanThreshold</option>
+                                    <option name="option" value=" LessThanOrEqualToThreshold">
+                                        LessThanOrEqualToThreshold</option>
+                                    <option name="option" value="LessThanLowerOrGreaterThanUpperThreshold">
+                                        LessThanLowerOrGreaterThanUpperThreshold</option>
+                                    <option name="option" value=" LessThanLowerThreshold"> LessThanLowerThreshold
+                                    </option>
+                                    <option name="option" value="GreaterThanUpperThreshold">GreaterThanUpperThreshold
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- DropDown -->
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="AlarmName" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Alarm Name </label>
+                                <div class="col">
+                                    <input type="text" name="name" id="AlarmName" placeholder="CPUUtilizationAlarm">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- DropDown -->
+                        <div class="col d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Namespace </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <div class="custom-select " style="width:225px;">
+                                <select id="select1" name="namespace" style="overflow-x: auto;">
+                                    <option name="option" value="AWS/AmplifyHosting">AWS/AmplifyHosting</option>
+                                    <option name="option" value="AWS/ApiGateway">AWS/ApiGateway</option>
+                                    <option name="option" value="AWS/AppFlow">AWS/AppFlow</option>
+                                    <option name="option" value="AWS/MGN">AWS/MGN</option>
+                                    <option name="option" value="AWS/AppRunner">AWS/AppRunner</option>
+                                    <option name="option" value="AWS/AppStream">AWS/AppStream</option>
+                                    <option name="option" value="AWS/AppSync">AWS/AppSync</option>
+                                    <option name="option" value="AWS/Athena">AWS/Athena</option>
+                                    <option name="option" value="AWS/RDS">AWS/RDS</option>
+                                    <option name="option" value="AWS/Backup">AWS/Backup</option>
+                                    <option name="option" value="AWS/Billing">AWS/Billing</option>
+                                    <option name="option" value="AWS/Braket/By Device">AWS/Braket/By Device</option>
+                                    <option name="option" value="AWS/CertificateManager">AWS/CertificateManager</option>
+                                    <option name="option" value="AWS/ACMPrivateCA">AWS/ACMPrivateCA</option>
+                                    <option name="option" value="AWS/Chatbot">AWS/Chatbot</option>
+                                    <option name="option" value="AWS/ChimeVoiceConnector">AWS/ChimeVoiceConnector</option>
+                                    <option name="option" value="AWS/ChimeSDK">AWS/ChimeSDK</option>
+                                    <option name="option" value="AWS/ClientVPN">AWS/ClientVPN</option>
+                                    <option name="option" value="AWS/CloudFront">AWS/CloudFront</option>
+                                    <option name="option" value="AWS/CloudHSM">AWS/CloudHSM</option>
+                                    <option name="option" value="AWS/CloudSearch">AWS/CloudSearch</option>
+                                    <option name="option" value="AWS/CloudTrail">AWS/CloudTrail</option>
+                                    <option name="option" value="AWS/CloudWatch/MetricStreams">AWS/CloudWatch/MetricStreams</option>
+                                    <option name="option" value="AWS/RUM">AWS/RUM</option>
+                                    <option name="option" value="AWS/Logs">AWS/Logs</option>
+                                    <option name="option" value="AWS/CodeBuild">AWS/CodeBuild</option>
+                                    <option name="option" value="AWS/CodeWhisperer">AWS/CodeWhisperer</option>
+                                    <option name="option" value="AWS/Cognito">AWS/Cognito</option>
+                                    <option name="option" value="AWS/Comprehend">AWS/Comprehend</option>
+                                    <option name="option" value="AWS/Connect">AWS/Connect</option>
+                                    <option name="option" value="AWS/DataLifecycleManager">AWS/DataLifecycleManager</option>
+                                    <option name="option" value="AWS/DataSync">AWS/DataSync</option>
+                                    <option name="option" value="AWS/DevOps-Guru">AWS/DevOps-Guru</option>
+                                    <option name="option" value="AWS/DMS">AWS/DMS</option>
+                                    <option name="option" value="AWS/DX">AWS/DX</option>
+                                    <option name="option" value="AWS/DirectoryService">AWS/DirectoryService</option>
+                                    <option name="option" value="AWS/DocDB">AWS/DocDB</option>
+                                    <option name="option" value="AWS/DynamoDB">AWS/DynamoDB</option>
+                                    <option name="option" value="AWS/DAX">AWS/DAX</option>
+                                    <option name="option" value="AWS/EC2">AWS/EC2</option>
+                                    <option name="option" value="AWS/ElasticGPUs">AWS/ElasticGPUs</option>
+                                    <option name="option" value="AWS/EC2Spot">AWS/EC2Spot</option>
+                                    <option name="option" value="AWS/AutoScaling">AWS/AutoScaling</option>
+                                    <option name="option" value="AWS/ElasticBeanstalk">AWS/ElasticBeanstalk</option>
+                                    <option name="option" value="AWS/EBS">AWS/EBS</option>
+                                    <option name="option" value="AWS/ECR">AWS/ECR</option>
+                                    <option name="option" value="AWS/ECS">AWS/ECS</option>
+                                    <option name="option" value="AWS/ECS/ManagedScaling">AWS/ECS/ManagedScaling</option>
+                                    <option name="option" value="AWS/EFS">AWS/EFS</option>
+                                    <option name="option" value="AWS/ElasticInference">AWS/ElasticInference</option>
+                                    <option name="option" value="AWS/ApplicationELB">AWS/ApplicationELB</option>
+                                    <option name="option" value="AWS/NetworkELB">AWS/NetworkELB</option>
+                                    <option name="option" value="AWS/GatewayELB">AWS/GatewayELB</option>
+                                    <option name="option" value="AWS/ELB">AWS/ELB</option>
+                                    <option name="option" value="AWS/ElasticTranscoder">AWS/ElasticTranscoder</option>
+                                    <option name="option" value="AWS/ElastiCache">AWS/ElastiCache</option>
+                                    <option name="option" value="AWS/ElastiCache">AWS/ElastiCache</option>
+                                    <option name="option" value="AWS/ES">AWS/ES</option>
+                                    <option name="option" value="AWS/ElasticMapReduce">AWS/ElasticMapReduce</option>
+                                    <option name="option" value="AWS/MediaConnect">AWS/MediaConnect</option>
+                                    <option name="option" value="AWS/MediaConvert">AWS/MediaConvert</option>
+                                    <option name="option" value="AWS/MediaLive">AWS/MediaLive</option>
+                                    <option name="option" value="AWS/MediaPackage">AWS/MediaPackage</option>
+                                    <option name="option" value="AWS/MediaStore">AWS/MediaStore</option>
+                                    <option name="option" value="AWS/MediaTailor">AWS/MediaTailor</option>
+                                    <option name="option" value="AWS/Events">AWS/Events</option>
+                                    <option name="option" value="AWS/FSx">AWS/FSx</option>
+                                    <option name="option" value="AWS/GameLift">AWS/GameLift</option>
+                                    <option name="option" value="AWS/GlobalAccelerator">AWS/GlobalAccelerator</option>
+                                    <option name="option" value="AWS/GroundStation">AWS/GroundStation</option>
+                                    <option name="option" value="AWS/HealthLake">AWS/HealthLake</option>
+                                    <option name="option" value="AWS/Inspector">AWS/Inspector</option>
+                                    <option name="option" value="AWS/IVS">AWS/IVS</option>
+                                    <option name="option" value="AWS/IVSChat">AWS/IVSChat</option>
+                                    <option name="option" value="AWS/IoT">AWS/IoT</option>
+                                    <option name="option" value="AWS/IoTAnalytics">AWS/IoTAnalytics</option>
+                                    <option name="option" value="AWS/IoTFleetWise">AWS/IoTFleetWise</option>
+                                    <option name="option" value="AWS/IoTSiteWise">AWS/IoTSiteWise</option>
+                                    <option name="option" value="AWS/ThingsGraph">AWS/ThingsGraph</option>
+                                    <option name="option" value="AWS/IoTTwinMaker">AWS/IoTTwinMaker</option>
+                                    <option name="option" value="AWS/KMS">AWS/KMS</option>
+                                    <option name="option" value="AWS/Cassandra">AWS/Cassandra</option>
+                                    <option name="option" value="AWS/KinesisAnalytics">AWS/KinesisAnalytics</option>
+                                    <option name="option" value="AWS/Firehose">AWS/Firehose</option>
+                                    <option name="option" value="AWS/Kinesis">AWS/Kinesis</option>
+                                    <option name="option" value="AWS/KinesisVideo">AWS/KinesisVideo</option>
+                                    <option name="option" value="AWS/Lambda">AWS/Lambda</option>
+                                    <option name="option" value="AWS/Lex">AWS/Lex</option>
+                                    <option name="option" value="AWS/LicenseManager/LinuxSubscripti">AWS/LicenseManager/LinuxSubscriptions</option>
+                                    <option name="option" value="AWS/Location">AWS/Location</option>
+                                    <option name="option" value="AWS/lookoutequipment">AWS/lookoutequipment</option>
+                                    <option name="option" value="AWS/LookoutMetrics">AWS/LookoutMetrics</option>
+                                    <option name="option" value="AWS/LookoutVision">AWS/LookoutVision</option>
+                                    <option name="option" value="AWS/ML">AWS/ML</option>
+                                    <option name="option" value="AWS/managedblockchain">AWS/managedblockchain</option>
+                                    <option name="option" value="AWS/Prometheus">AWS/Prometheus</option>
+                                    <option name="option" value="AWS/Kafka">AWS/Kafka</option>
+                                    <option name="option" value="AWS/MemoryDB">AWS/MemoryDB</option>
+                                    <option name="option" value="AWS/AmazonMQ">AWS/AmazonMQ</option>
+                                    <option name="option" value="AWS/Neptune">AWS/Neptune</option>
+                                    <option name="option" value="AWS/NetworkFirewall">AWS/NetworkFirewall</option>
+                                    <option name="option" value="AWS/NetworkManager">AWS/NetworkManager</option>
+                                    <option name="option" value="AWS/NimbleStudio">AWS/NimbleStudio</option>
+                                    <option name="option" value="AWS/Omics">AWS/Omics</option>
+                                    <option name="option" value="AWS/OpsWorks">AWS/OpsWorks</option>
+                                    <option name="option" value="AWS/Outposts">AWS/Outposts</option>
+                                    <option name="option" value="AWS/PanoramaDeviceMetrics">AWS/PanoramaDeviceMetrics</option>
+                                    <option name="option" value="AWS/Personalize">AWS/Personalize</option>
+                                    <option name="option" value="AWS/Pinpoint">AWS/Pinpoint</option>
+                                    <option name="option" value="AWS/Polly">AWS/Polly</option>
+                                    <option name="option" value="AWS/PrivateLinkEndpoints">AWS/PrivateLinkEndpoints</option>
+                                    <option name="option" value="AWS/PrivateLinkServices">AWS/PrivateLinkServices</option>
+                                    <option name="option" value="AWS/Private5G">AWS/Private5G</option>
+                                    <option name="option" value="AWS/QLDB">AWS/QLDB</option>
+                                    <option name="option" value="AWS/QuickSight">AWS/QuickSight</option>
+                                    <option name="option" value="AWS/Redshift">AWS/Redshift</option>
+                                    <option name="option" value="AWS/RDS">AWS/RDS</option>
+                                    <option name="option" value="AWS/Rekognition">AWS/Rekognition</option>
+                                    <option name="option" value="AWS/Robomaker">AWS/Robomaker</option>
+                                    <option name="option" value="AWS/Route53">AWS/Route53</option>
+                                    <option name="option" value="AWS/Route53RecoveryReadiness">AWS/Route53RecoveryReadiness</option>
+                                    <option name="option" value="AWS/SageMaker">AWS/SageMaker</option>
+                                    <option name="option" value="AWS/SageMaker/ModelBuildingPipelin">AWS/SageMaker/ModelBuildingPipeline</option>
+                                    <option name="option" value="AWS/SecretsManager">AWS/SecretsManager</option>
+                                    <option name="option" value="AWS/SecurityLake">AWS/SecurityLake</option>
+                                    <option name="option" value="AWS/ServiceCatalog">AWS/ServiceCatalog</option>
+                                    <option name="option" value="AWS/DDoSProtection">AWS/DDoSProtection</option>
+                                    <option name="option" value="AWS/SES">AWS/SES</option>
+                                    <option name="option" value="AWS/simspaceweaver">AWS/simspaceweaver</option>
+                                    <option name="option" value="AWS/SNS">AWS/SNS</option>
+                                    <option name="option" value="AWS/SQS">AWS/SQS</option>
+                                    <option name="option" value="AWS/S3">AWS/S3</option>
+                                    <option name="option" value="AWS/S3/Storage-Lens">AWS/S3/Storage-Lens</option>
+                                    <option name="option" value="AWS/SWF">AWS/SWF</option>
+                                    <option name="option" value="AWS/States">AWS/States</option>
+                                    <option name="option" value="AWS/StorageGateway">AWS/StorageGateway</option>
+                                    <option name="option" value="AWS/SSM-RunCommand">AWS/SSM-RunCommand</option>
+                                    <option name="option" value="AWS/Textract">AWS/Textract</option>
+                                    <option name="option" value="AWS/Timestream">AWS/Timestream</option>
+                                    <option name="option" value="AWS/Transfer">AWS/Transfer</option>
+                                    <option name="option" value="AWS/Transcribe">AWS/Transcribe</option>
+                                    <option name="option" value="AWS/Translate">AWS/Translate</option>
+                                    <option name="option" value="AWS/TrustedAdvisor">AWS/TrustedAdvisor</option>
+                                    <option name="option" value="AWS/NATGateway">AWS/NATGateway</option>
+                                    <option name="option" value="AWS/TransitGateway">AWS/TransitGateway</option>
+                                    <option name="option" value="AWS/VPN">AWS/VPN</option>
+                                    <option name="option" value="AWS/IPAM">AWS/IPAM</option>
+                                    <option name="option" value="AWS/WAFV2 for AWS WAF resources">AWS/WAFV2 for AWS WAF resources</option>
+                                    <option name="option" value="AWS/WorkMail">AWS/WorkMail</option>
+                                    <option name="option" value="AWS/WorkSpaces">AWS/WorkSpaces</option>
+                                    <option name="option" value="AWS/WorkSpacesWeb">AWS/WorkSpacesWeb</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- DropDown -->
+                        <div class="input-group">
+                            <div class="col SubCreate d-flex align-items-center "
+                                style="justify-content: space-between;flex-wrap: wrap;">
+                                <label for="" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Evaluation periods
+                                </label>
+                                <div class="col SubCreate d-flex align-items-center"
+                                    style="gap: 10px;position: relative;right: 2rem;">
+                                    <div class="otp-field">
+                                        <input type="text" name="eval_perod1" maxlength="1" id="statusCode1" placeholder="1" />
+                                        <input type="text" name="eval_perod2" maxlength="1" id="statusCode2" placeholder="1" />
+                                    </div>
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Metric Name </label>
+                                <div class="col">
+                                    <input type="text" name="matric_name" id="MetricName" placeholder="CPUUtilization">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Threshold
+                            </label>
+                            <div class="col SubCreate d-flex align-items-center me-5" style="gap: 10px;">
+                                <div class="otp-field">
+                                    <input type="text" name="threadshold1" maxlength="1" placeholder="1" />
+                                    <input type="text" name="threadshold2" maxlength="1" placeholder="1" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">period
+                            </label>
+                            <div class="col SubCreate d-flex align-items-center me-5" style="gap: 10px;">
+                                <div class="otp-field">
+                                    <input type="text" name="period1" maxlength="1" placeholder="1" />
+                                    <input type="text" name="period2" maxlength="1" placeholder="1" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <footer>
+                            <button type="submit" class="button" id="button">Create</button>
+                        </footer>
+                    </div>
+                    <!-- input form -->
+                </form>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
+    <!--<script src="{{url_for('static', filename="js/aws/Cloud-watch.js")}}"></script>-->
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js') }}"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

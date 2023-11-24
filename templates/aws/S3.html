@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Bucket</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/aws/S3.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+        integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+</head>
+
+<body style="background: transparent;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row-lg-6 row-12 Back-Img">
+            <!-- <div class="col-sm-6">&nbsp;</div> -->
+            <div class="col-lg-8 col-12 Form-Content">
+                <!-- <div class="form"> -->
+                <form action="/aws/s3" id="form" method="POST" target="_parent">
+                    <!-- header -->
+                    <header class="col d-flex align-items-center justify-content-center" style="flex-wrap: wrap;">
+                        <img src="{{ url_for('static',filename='images/s3-bucket.png') }}" alt="">
+                        <h1 class="ms-1 mt-2" style="color: rgb(3,1,73);">S3 BUCKET</h1>
+                    </header>
+                    <nav class="col d-flex align-items-center justify-content-center ms-3 me-3 mt-3">
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                    </nav>
+                    <!-- header -->
+                    <div style="text-align: center;">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% for category, message in messages %}
+                                {% if category == 'danger' %}
+                                    <div style="color: red;">{{ message }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    <!-- input form -->
+                    <div class="col">
+                        <!-- DropDown -->
+                        <div class="col drop-down d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Region </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <div class="custom-select" style="width: 18rem;position: relative;right: 12px;">
+                                <select id="select1" name="region">
+                                    <option name="option">us-east-1</option>
+                                    <option name="option" value="us-east-2">us-east-2</option>
+                                    <option name="option" value="us-east-1">us-east-1</option>
+                                    <option name="option" value="us-west-1">us-west-1</option>
+                                    <option name="option" value="us-west-2">us-west-2</option>
+                                    <option name="option" value="af-south-1">af-south-1</option>
+                                    <option name="option" value="ap-east-1">ap-east-1</option>
+                                    <option name="option" value="ap-south-2">ap-south-2</option>
+                                    <option name="option" value="ap-southeast-3">ap-southeast-3</option>
+                                    <option name="option" value="ap-southeast-4">ap-southeast-4</option>
+                                    <option name="option" value="ap-south-1">ap-south-1</option>
+                                    <option name="option" value="ap-northeast-3">ap-northeast-3</option>
+                                    <option name="option" value="ap-northeast-2">ap-northeast-2</option>
+                                    <option name="option" value="ap-southeast-1">ap-southeast-1</option>
+                                    <option name="option" value="ap-southeast-2">ap-southeast-2</option>
+                                    <option name="option" value="ap-northeast-1">ap-northeast-1</option>
+                                    <option name="option" value="ca-central-1">ca-central-1</option>
+                                    <option name="option" value="eu-central-1">eu-central-1</option>
+                                    <option name="option" value="eu-west-1">eu-west-1</option>
+                                    <option name="option" value="eu-west-2">eu-west-2</option>
+                                    <option name="option" value="eu-south-1">eu-south-1</option>
+                                    <option name="option" value="eu-west-3">eu-west-3</option>
+                                    <option name="option" value="eu-south-2">eu-south-2</option>
+                                    <option name="option" value="eu-north-1">eu-north-1</option>
+                                    <option name="option" value="eu-central-2">eu-central-2</option>
+                                    <option name="option" value="il-central-1">il-central-1</option>
+                                    <option name="option" value="me-south-1">me-south-1</option>
+                                    <option name="option" value="me-central-1">me-central-1</option>
+                                    <option name="option" value="sa-east-1">sa-east-1</option>
+                                    <option name="option" value="us-gov-east-1">us-gov-east-1</option>
+                                    <option name="option" value="us-gov-west-1">us-gov-west-1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- DropDown -->
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                            style="justify-content: space-evenly; flex-wrap: wrap;">
+                            <label for="bucKet" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Bucket Name</label>
+                            <div class="col">
+                                <input type="text" name="name" id="BUCKET" placeholder="my-s3-bucket">
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;margin-top: -.5rem">Acl </label>
+                            <div class="col SubCreate d-flex align-items-center" style="gap: 10px;margin-left: 4rem;flex-direction: column;">
+                                <div class="col">
+                                    <label>
+                                        <input type="radio" name="acl" value="True" style="display: none;">
+                                        <span>True</span>
+                                    </label>
+    
+                                    <label>
+                                        <input type="radio" name="acl" value="False" style="display: none;">
+                                        <span>False</span>
+                                    </label>
+                                </div>
+                                <div class="row" style="position: relative;right: 4rem;color: red;">
+                                    <p id="output"></p>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-center">
+                            <footer>
+                                <button type="submit" class="button" id="button">Create</button>
+                            </footer>
+                        </div>
+                        <!-- input form -->
+                </form>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
+    <script src="{{url_for('static', filename="js/aws/S3.js")}}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js') }}"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

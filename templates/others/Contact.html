@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/Contact.css') }}">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+       crossorigin="anonymous">
+</head>
+
+<body>
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row" style="position:sticky;top: 0;background-color: white;z-index: 1;">
+            <nav class="navbar navbar-expand-lg ps-4 pe-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{url_for('home')}}">
+                        <img src="{{url_for('static',filename='images/aslkjcdnsacsa..png')}}">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{url_for('service')}}">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{url_for('providers')}}">Providers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{url_for('about')}}">About Us</a>
+                            </li>
+                            <!-- Example split danger button -->
+                            <div class="dropdown" style="display: flex;align-items: center;">
+                                <button class="" style="background: none;border: 0;outline: 0;"><i
+                                        class="fa-solid fa-user"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="{{url_for('register')}}">Register</a>
+                                    <a href="{{url_for('login')}}">LogIn</a>
+                                </div>
+                            </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row contact-box">
+            <div class="col">
+                <div class="col form-box" style="width: 20rem;height: 20rem;">
+                    <form action="">
+                        <h2>Contact Us</h2>
+                        <hr style="color: aqua;height: 6px;">
+                    <div class="col">
+                    <input type="text" placeholder="UserName">
+                    </div>
+                    <div class="col">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="col">
+                        <textarea name="Message" id="" cols="30" rows="5" placeholder="Message"></textarea>
+                    </div>
+                    <button class="btn btn-primary mt-2" type="button" style="margin-left: 5rem;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static' ,filename='bootstrap/js/bootstrap.min.js') }}"
+      
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

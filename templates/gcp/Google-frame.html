@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Cloud</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/gcp/Google-frame.css') }}">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+</head>
+
+<body style="background-color:white;overflow-x: hidden;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row">
+            <div class="col-sm-3 d-none d-lg-block Button-frame">
+                <div class="col" style="position:relative;left: 0;">
+                    <a href="{{url_for('gcp.credential')}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49" fill="none">
+                            <ellipse cx="12.25" cy="12.25" rx="12.25" ry="12.25"
+                                transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 40.834 36.75)" fill="#EFF1F2" />
+                            <path
+                                d="M16.034 24.5C16.034 17.5688 21.6528 11.95 28.584 11.95C35.5152 11.95 41.134 17.5688 41.134 24.5C41.134 31.4312 35.5152 37.05 28.584 37.05C21.6528 37.05 16.034 31.4312 16.034 24.5Z"
+                                stroke="#7E869E" stroke-opacity="0.25" stroke-width="0.6" />
+                            <path
+                                d="M16.334 38.6454C18.817 40.079 21.6336 40.8337 24.5007 40.8337C27.3678 40.8337 30.1843 40.079 32.6673 38.6454C35.1503 37.2119 37.2122 35.15 38.6457 32.667C40.0793 30.184 40.834 27.3674 40.834 24.5003C40.834 21.6332 40.0793 18.8166 38.6457 16.3337C37.2122 13.8507 35.1503 11.7888 32.6673 10.3552C30.1843 8.92169 27.3678 8.16699 24.5007 8.16699C21.6336 8.16699 18.817 8.92169 16.334 10.3552"
+                                stroke="#8BCDFF" stroke-width="3.2" />
+                            <path
+                                d="M4.08398 24.5003L2.83459 23.5008L2.03498 24.5003L2.83459 25.4998L4.08398 24.5003ZM22.459 26.1003C23.3426 26.1003 24.059 25.384 24.059 24.5003C24.059 23.6167 23.3426 22.9003 22.459 22.9003V26.1003ZM11.0013 13.2925L2.83459 23.5008L5.33337 25.4998L13.5 15.2915L11.0013 13.2925ZM2.83459 25.4998L11.0013 35.7082L13.5 33.7091L5.33337 23.5008L2.83459 25.4998ZM4.08398 26.1003H22.459V22.9003H4.08398V26.1003Z"
+                                fill="#8BCDFF" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="col heading">
+                    <div class="col" style="display: flex;justify-content: center;align-items: center;gap: 10px;">
+                        <span style="font-size: 40px;"><span style="color: #0038EF;">G</span><span
+                                style="color: #DB4437;">C</span><span style="color: #F4B400;">P</span></span>
+                        <p style="font-size: 20px; color: gray;margin-top: 30px;">Resource</p>
+                    </div>
+                    <!-- Search Icon -->
+                    <input class="search" type="search" placeholder="Search..." id="SearchButtons" onkeyup="myFunction()">
+                    <!-- Search Icon -->
+                </div>
+                <div class="col" style="border:1px solid #0038EF;">
+                    <div class="col btn-box" id="myUL">
+                        <div class="col">
+                            <a href="{{url_for('gcp.vpc')}}" target="frame1" id="button1"><button><img src="{{ url_for('static',filename='images/vpc.png') }}" alt=""
+                                        style="width: 30px;"> VPC</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.cloudrun')}}" target="frame1" id="button2"><button><img
+                                        src="{{ url_for('static',filename='images/cloud_Run.png') }}" alt="" style="width: 30px;">Cloud Run</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.ComputeEngine')}}" target="frame1" id="button3"><button><img
+                                        src="{{ url_for('static',filename='images/compute_engine.png') }}" alt="" style="width: 30px;">Compute
+                                    Engine</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.CloudSql')}}" target="frame1" id="button4"> <button><img
+                                        src="{{ url_for('static',filename='images/cloud-sql.png') }}" alt="" style="width: 30px;">Cloud SQL</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.CloudStorage')}}" target="frame1" id="button5"> <button><img
+                                        src="{{ url_for('static',filename='images/cloud_storage.png') }}" alt="" style="width: 30px;">Cloud
+                                    Storage</button></a>
+                        </div>
+                        <div class="col">
+
+                            <a href="{{url_for('gcp.gke')}}" target="frame1" id="button6"> <button><img src="{{ url_for('static',filename='images/kuber.png') }}"
+                                        alt="" style="width: 30px;">KuberNetes</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.AppEngine')}}" target="frame1" id="button7"> <button><img
+                                        src="{{ url_for('static',filename='images/app_engine.png') }}" alt="" style="width: 30px;">App
+                                    Engine</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.CloudFunction')}}" target="frame1" id="button8"> <button><img
+                                        src="{{ url_for('static',filename='images/cloud-function.png') }}" alt="" style="width: 30px;">Cloud
+                                    Function</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.BigQuery')}}" target="frame1" id="button9"> <button><img src="{{ url_for('static',filename='images/big-qu.png') }}"
+                                        alt="" style="width: 30px;">Big Query</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.ArtifactRegistry')}}" target="frame1" id="button10"> <button><img
+                                        src="{{ url_for('static',filename='images/artifact_registry.png') }}" alt="" style="width: 30px;">Artifact
+                                    Registry</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.CloudSpanner')}}" target="frame1" id="button11"> <button><img
+                                        src="{{ url_for('static',filename='images/cloud-spaner.png') }}" alt="" style="width: 30px;">Cloud
+                                    Spanner</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.vmware')}}" target="frame1" id="button12"> <button><img src="{{ url_for('static',filename='images/vm-ware.png') }}"
+                                        alt="" style="width: 30px;">VM Ware</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('gcp.storagetransfer')}}" target="frame1" id="button13"> <button><img
+                                        src="{{ url_for('static',filename='images/storage-tran.png') }}" alt="" style="width: 30px;">Storage
+                                    Transfer</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="col-sm-9 iframe-box">
+                <iframe src="" class="d-none d-sm-block" name="frame1" width="100%" height="610rem"
+                    style="border: 0;outline: 0;background: none;position: relative;z-index: 1;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row top-img" style="position: absolute;top: 0;right: 0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="428" height="125" viewBox="0 0 428 125" fill="none">
+            <path
+                d="M209.59 41.5001C217.76 41.6501 225.95 41.5901 234.13 41.3401C242.11 41.4901 250.09 41.6601 258.06 41.9301C297.92 43.2901 337.54 47.3201 375.19 65.6201C381.97 68.9701 388.61 72.6201 395.09 76.5601C414.54 88.3701 432.56 102.75 448.5 119.35C449.98 120.89 451.45 122.46 452.92 124.04V7.46008C452.92 -3.83992 445.49 -12.9999 436.31 -12.9999H-9.15527e-05C55.7499 20.0901 119.69 37.6801 185.14 40.4401C193.26 41.0001 201.42 41.3601 209.59 41.5001Z"
+                fill="#46ABE5" />
+        </svg>
+    </div>
+    <div class="row bottom-img" style="position: absolute;z-index: -1;right: 0;top: 31rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="383" viewBox=" 0 1440 383" fill="none">
+            <path
+                d="M1439.07 378.862V325.962C930.489 364.302 720.215 28.5217 397.982 3.60172C199.757 -11.7483 66.0167 33.7117 -0.988281 65.6417V378.862C-0.988281 385.032 7.56172 390.012 18.1142 390.012H1419.97C1430.52 390.022 1439.07 385.042 1439.07 378.862Z"
+                fill="url(#paint0_linear_582_1886)" />
+            <defs>
+                <linearGradient id="paint0_linear_582_1886" x1="160.769" y1="581.309" x2="1058.18" y2="-144.787"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0.0925" stop-color="#5F82F5" />
+                    <stop offset="0.2258" stop-color="#5F82F5" />
+                    <stop offset="0.4592" stop-color="#5F82F5" />
+                    <stop offset="0.7629" stop-color="#39C0DC" />
+                    <stop offset="0.9775" stop-color="#25E5D1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    </div>
+    <script src="{{ url_for('static',filename='js/gcp/Google-frame.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+      
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

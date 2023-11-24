@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage transfer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/gcp/storage.css') }}">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+        integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+</head>
+
+<body style="background: transparent;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row-lg-6 row-12 Back-Img ">
+            <div class="row" style="height: 26rem;">
+                <div class="col back-blue">&nbsp;</div>
+                <div class="col back-pink">&nbsp;</div>
+            </div>
+            <div class="row " style="height: 26rem;">
+                <div class="col back-green">&nbsp;</div>
+                <div class="col back-yellow">&nbsp;</div>
+            </div>
+            <!-- <div class="col-sm-6">&nbsp;</div> -->
+            <div class="col-lg-8 col-12 Form-Content">
+                <!-- <div class="form"> -->
+                <form action="/gcp/storagetransfer" id="form" method="POST" target="_parent">
+                    <!-- header -->
+                    <header class="col d-flex align-items-center justify-content-center"
+                        style="flex-wrap: wrap;gap: 10px;">
+                        <img src="{{ url_for('static',filename='images/storage-tran.png') }}" alt="">
+                        <h1 class="mt-2" style="color: #46abe5;">STORAGE TRANSFER</h1>
+                    </header>
+                    <nav class="col d-flex align-items-center justify-content-center ms-3 me-3 mt-3">
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">&nbsp;</div>
+                        <div class="col-3" style="height: 5px;">
+                            &nbsp;</div>
+                    </nav>
+                    <!-- header -->
+                    <div style="text-align: center;">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% for category, message in messages %}
+                                {% if category == 'danger' %}
+                                    <div style="color: red;">{{ message }}</div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    </div>
+                    <!-- input form -->
+                    <div class="col">
+                        <!-- DropDown -->
+                        <div class="col drop-down d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Region </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <!--<div class="custom-select" style="width: 19rem;position: relative;">-->
+                                <select class="variant" id="select1" name="region">
+                                    <option name="option">us-west-1</option>
+                                    <option name="option" value="us-west-1">us-west-1</option>
+                                    <option name="option" value="asia-south1">asia-south1</option>
+                                    <option name="option" value="asia-south2">asia-south2</option>
+                                    <option name="option" value="asia-east1">asia-east1</option>
+                                    <option name="option" value="asia-east2">asia-east2</option>
+                                    <option name="option" value="asia-northeast1">asia-northeast1</option>
+                                    <option name="option" value="asia-northeast1">asia-northeast1</option>
+                                    <option name="option" value="asia-northeast3">asia-northeast3</option>
+                                    <option name="option" value="asia-southeast1">asia-southeast1</option>
+                                    <option name="option" value="australia-southeast1">australia-southeast1</option>
+                                    <option name="option" value="australia-southeast2">australia-southeast2</option>
+                                    <option name="option" value="europe-central2">europe-central2</option>
+                                    <option name="option" value="europe-north2">europe-north2</option>
+                                    <option name="option" value="europe-southwest1">europe-southwest1</option>
+                                    <option name="option" value="europe-west1">europe-west1</option>
+                                    <option name="option" value="europe-west2">europe-west2</option>
+                                    <option name="option" value="europe-west3">europe-west3</option>
+                                    <option name="option" value="europe-west4">europe-west4</option>
+                                    <option name="option" value="europe-west5">europe-west5</option>
+                                    <option name="option" value="europe-west6">europe-west6</option>
+                                    <option name="option" value="europe-west8">europe-west8</option>
+                                    <option name="option" value="europe-west9">europe-west9</option>
+                                    <option name="option" value="northamerica-northeast1">northamerica-northeast1
+                                    </option>
+                                    <option name="option" value="northamerica-northeast2">northamerica-northeast2
+                                    </option>
+                                    <option name="option" value="southamerica-east1">southamerica-east1</option>
+                                    <option name="option" value="us-central1">us-central1</option>
+                                    <option name="option" value="us-east1">us-east1</option>
+                                    <option name="option" value="us-east4">us-east4</option>
+                                    <option name="option" value="us-west1">us-west1</option>
+                                    <option name="option" value="us-west2">us-west2</option>
+                                    <option name="option" value="us-west3">us-west3</option>
+                                    <option name="option" value="us-west4">us-west4</option>
+                                </select>
+                            <!--</div>-->
+                        </div>
+                        <!-- DropDown -->
+                        <!-- DropDown -->
+                        <div class="col drop-down d-flex align-items-center"
+                            style="justify-content: space-evenly;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Zone </label>
+                            <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                            <!--<div class="custom-select" style="width: 19rem;position: relative;">-->
+                                <select id="data" name="zone">
+                                    <option name="option">us-west1</option>
+                                    <option name="option" value="us-west1">us-west1</option>
+                                    <option name="option" value="us-west2">us-west2</option>
+                                    <option name="option" value="us-west3">us-west3</option>
+                                    <option name="option" value="asia-south1-a">asia-south1-a</option>
+                                    <option name="option" value="asia-south1-b">asia-south1-b</option>
+                                    <option name="option" value="asia-south1-c">asia-south1-c</option>
+                                    <option name="option" value="asia-south2-a">asia-south2-a</option>
+                                    <option name="option" value="asia-south2-b">asia-south2-b</option>
+                                    <option name="option" value="asia-south2-c">asia-south2-c</option>
+                                    <option name="option" value="asia-east1-a">asia-east1-a</option>
+                                    <option name="option" value="asia-east1-b">asia-east1-b</option>
+                                    <option name="option" value="asia-east1-c">asia-east1-c</option>
+                                    <option name="option" value="asia-east2-a">asia-east2-a</option>
+                                    <option name="option" value="asia-east2-b">asia-east2-b</option>
+                                    <option name="option" value="asia-east2-c">asia-east2-c</option>
+                                    <option name="option" value="asia-northeast1-a">asia-northeast1-a</option>
+                                    <option name="option" value="asia-northeast1-b">asia-northeast1-b</option>
+                                    <option name="option" value="asia-northeast1-c">asia-northeast1-c</option>
+                                    <option name="option" value="asia-northeast2-a">asia-northeast2-a</option>
+                                    <option name="option" value="asia-northeast2-b">asia-northeast2-b</option>
+                                    <option name="option" value="asia-northeast2-c">asia-northeast2-c</option>
+                                    <option name="option" value="asia-northeast3-a">asia-northeast3-a</option>
+                                    <option name="option" value="asia-northeast3-b">asia-northeast3-b</option>
+                                    <option name="option" value="asia-northeast3-c">asia-northeast3-c</option>
+                                    <option name="option" value="asia-southeast1-a">asia-southeast1-a</option>
+                                    <option name="option" value="asia-southeast1-b">asia-southeast1-b</option>
+                                    <option name="option" value="asia-southeast1-c">asia-southeast1-c</option>
+                                    <option name="option" value="australia-southeast1-a">australia-southeast1-a</option>
+                                    <option name="option" value="australia-southeast1-b">australia-southeast1-b</option>
+                                    <option name="option" value="australia-southeast1-c">australia-southeast1-c</option>
+                                    <option name="option" value="australia-southeast1-a">australia-southeast1-a</option>
+                                    <option name="option" value="australia-southeast1-b">australia-southeast1-b</option>
+                                    <option name="option" value="australia-southeast1-c">australia-southeast1-c</option>
+                                    <option name="option" value="europe-central2-a">europe-central2-a</option>
+                                    <option name="option" value="europe-central2-b">europe-central2-b</option>
+                                    <option name="option" value="europe-central2-c">europe-central2-c</option>
+                                    <option name="option" value="europe-north2-a">europe-north2-a</option>
+                                    <option name="option" value="europe-north2-b">europe-north2-b</option>
+                                    <option name="option" value="europe-north2-c">europe-north2-c</option>
+                                    <option name="option" value="europe-southwest1-a">europe-southwest1-a</option>
+                                    <option name="option" value="europe-southwest1-b">europe-southwest1-b</option>
+                                    <option name="option" value="europe-southwest1-c">europe-southwest1-c</option>
+                                    <option name="option" value="europe-west1-b">europe-west1-b</option>
+                                    <option name="option" value="europe-west1-c">europe-west1-c</option>
+                                    <option name="option" value="europe-west1-d">europe-west1-d</option>
+                                    <option name="option" value="europe-west2-a">europe-west2-a</option>
+                                    <option name="option" value="europe-west2-b">europe-west2-b</option>
+                                    <option name="option" value="europe-west2-c">europe-west2-c</option>
+                                    <option name="option" value="europe-west3-a">europe-west3-a</option>
+                                    <option name="option" value="europe-west3-b">europe-west3-b</option>
+                                    <option name="option" value="europe-west3-c">europe-west3-c</option>
+                                    <option name="option" value="europe-west3-a">europe-west3-a</option>
+                                    <option name="option" value="europe-west3-b">europe-west3-b</option>
+                                    <option name="option" value="europe-west3-c">europe-west3-c</option>
+                                    <option name="option" value="europe-west4-a">europe-west4-a</option>
+                                    <option name="option" value="europe-west4-b">europe-west4-b</option>
+                                    <option name="option" value="europe-west4-c">europe-west4-c</option>
+                                    <option name="option" value="europe-west6-a">europe-west6-a</option>
+                                    <option name="option" value="europe-west6-b">europe-west6-b</option>
+                                    <option name="option" value="europe-west6-c">europe-west6-c</option>
+                                    <option name="option" value="europe-west8-a">europe-west8-a</option>
+                                    <option name="option" value="europe-west8-b">europe-west8-b</option>
+                                    <option name="option" value="europe-west8-c">europe-west8-c</option>
+                                    <option name="option" value="europe-west9-a">europe-west9-a</option>
+                                    <option name="option" value="europe-west9-b">europe-west9-b</option>
+                                    <option name="option" value="europe-west9-c">europe-west9-c</option>
+                                    <option name="option" value="northamerica-northeast1-a">northamerica-northeast1-a
+                                    </option>
+                                    <option name="option" value="northamerica-northeast1-b">northamerica-northeast1-b
+                                    </option>
+                                    <option name="option" value="northamerica-northeast1-c">northamerica-northeast1-c
+                                    </option>
+                                    <option name="option" value="northamerica-northeast2-a">northamerica-northeast2-a
+                                    </option>
+                                    <option name="option" value="northamerica-northeast2-b">northamerica-northeast2-b
+                                    </option>
+                                    <option name="option" value="northamerica-northeast2-c">northamerica-northeast2-c
+                                    </option>
+                                    <option name="option" value="southamerica-east1-a">southamerica-east1-a</option>
+                                    <option name="option" value="southamerica-east1-b">southamerica-east1-b</option>
+                                    <option name="option" value="southamerica-east1-c">southamerica-east1-c</option>
+                                    <option name="option" value="us-central1-a">us-central1-a</option>
+                                    <option name="option" value="us-central1-b">us-central1-b</option>
+                                    <option name="option" value="us-central1-c">us-central1-c</option>
+                                    <option name="option" value="us-east1-b">us-east1-b</option>
+                                    <option name="option" value="us-east1-c">us-east1-c</option>
+                                    <option name="option" value="us-east1-d">us-east1-d</option>
+                                    <option name="option" value="us-east4-a">us-east4-a</option>
+                                    <option name="option" value="us-east4-b">us-east4-b</option>
+                                    <option name="option" value="us-east4-c">us-east4-c</option>
+                                    <option name="option" value="us-west1-a">us-west1-a</option>
+                                    <option name="option" value="us-west1-b">us-west1-b</option>
+                                    <option name="option" value="us-west1-c">us-west1-c</option>
+                                    <option name="option" value="us-west2-a">us-west2-a</option>
+                                    <option name="option" value="us-west2-b">us-west2-b</option>
+                                    <option name="option" value="us-west2-c">us-west2-c</option>
+                                    <option name="option" value="us-west3-a">us-west3-a</option>
+                                    <option name="option" value="us-west3-b">us-west3-b</option>
+                                    <option name="option" value="us-west3-c">us-west3-c</option>
+                                    <option name="option" value="us-west4-a">us-west4-a</option>
+                                    <option name="option" value="us-west4-b">us-west4-b</option>
+                                    <option name="option" value="us-west4-c">us-west4-c</option>
+                                </select>
+                            <!--</div>-->
+                        </div>
+                        <!-- DropDown -->
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="SourceBucket" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Name </label>
+                                <div class="col">
+                                    <input type="text" name="name" id="reponame" placeholder="reponame">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="SourceBucket" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Source Bucket Name </label>
+                                <div class="col">
+                                    <input type="text" name="src_name" id="sourceBucket" placeholder="bucket_name1">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="BestinationBucket" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Destination Bucket Name </label>
+                                <div class="col">
+                                    <input type="text" name="dest_name" id="destinationBucket" placeholder="bucket_name1">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;margin-right: 3rem;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Source Object Delete </label>
+                            <div class="col SubCreate d-flex align-items-center"
+                                style="gap: 10px;flex-direction: column;margin-left: 3rem;margin-top: 1.5rem;">
+                                <div class="col">
+                                    <label>
+                                        <input type="radio" name="radio" value="True" style="display: none;">
+                                        <span>True</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="radio" value="False" style="display: none;">
+                                        <span>False</span>
+                                    </label>
+                                </div>
+                                <div class="row" style="position: relative;right: 4rem;color: red;">
+                                    <p id="output"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;margin-top: -1.5rem;">Sink Object Delete </label>
+                            <div class="col SubCreate d-flex align-items-center"
+                                style="gap: 10px;flex-direction: column;margin-top: -.5rem;">
+                                <div class="col">
+                                    <label>
+                                        <input type="radio" name="sink" value="Regional" style="display: none;">
+                                        <span>Regional</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="sink" value="Global" style="display: none;">
+                                        <span>Global</span>
+                                    </label>
+                                </div>
+                                <div class="row" style="position: relative;right: 4rem;color: red;">
+                                    <p id="output1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col d-flex align-items-center "
+                                style="justify-content: space-evenly; flex-wrap: wrap;">
+                                <label for="MonthDate" class="col d-flex align-items-left"
+                                    style="justify-content: space-between;">Month/Date/Year </label>
+                                <div class="col">
+                                    <input type="date" id="monthDate" name="duration" style="width: 19rem;">
+                                    <span class="error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col SubCreate d-flex align-items-center "
+                            style="justify-content: space-between;flex-wrap: wrap;">
+                            <label for="" class="col d-flex align-items-left"
+                                style="justify-content: space-between;">Ingress Ports
+                            </label>
+                            <div class="col SubCreate d-flex align-items-center me-4 ms-4" style="gap: 10px;">
+                                <div class="otp-field">
+                                    <input type="text" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <footer>
+                            <button type="submit" class="button" id="button">Create</button>
+                        </footer>
+                    </div>
+                    <!-- input form -->
+                </form>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='js/gcp/storage.js') }}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js') }}"
+        
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

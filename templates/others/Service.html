@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/Service.css') }}">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+</head>
+
+<body>
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg ps-5 pe-4" style="position: fixed;top: 0;z-index: 1;background-color: white;right: 0;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{url_for('home')}}">
+                        <img src="{{ url_for('static',filename='images/aslkjcdnsacsa..png') }}">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{url_for('providers')}}">Providers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{url_for('about')}}">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{url_for('contact')}}">Contact</a>
+                            </li>
+                            <!-- Example split danger button -->
+                            <div class="dropdown" style="display: flex;align-items: center;">
+                                <button class="" style="background: none;border: 0;outline: 0;"><i
+                                        class="fa-solid fa-user"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="{{url_for('register')}}">Register</a>
+                                    <a href="{{url_for('login')}}">LogIn</a>
+                                </div>
+                            </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row Img-container">
+            <img src="{{ url_for('static',filename='images/Service-bg.png') }}" alt="">
+        </div>
+        <!-- Services Cars -->
+        <div class="row Service-cards" style="background-color: rgb(255,255,255,0.8);">
+            <div class="row header">
+                <div class="col d-flex align-items-center justify-content-center">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+            <div class="row card-container" style="margin: 10px auto;">
+                <div class="col-sm-3">
+                    <div class="row card-head1">
+                        <img src="{{ url_for('static',filename='images/log-2.png') }}" alt="" class="">
+                     
+                    </div>
+                    <div class="col card-1">
+                        <h3>Softwere Devlopment</h3>
+                        <ul>
+                        <li>Web Devlopment</li>
+                        <li>Mobile Devlopment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="col card-head2">
+                        <img src="{{ url_for('static',filename='images/logo-4.png') }}" alt="" style="position:absolute;top:-1.3rem;left: -1.3rem;width: 10rem;">
+                    </div>
+                    <div class="col card-2">
+                        <h3>Cloud Offerings</h3>
+                        <ul>
+                            <li>DevOps Consulting</li>
+                            <li>Cloud Migrations</li>
+                            <li>Legacy fomicros service</li>
+                            <li>Kubernetes support and service</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="col card-head3">
+                        <img src="{{ url_for('static',filename='images/logo-1.png') }}" alt="" style="position:absolute;top:-1.3rem;left: -1rem;width: 10rem;">
+                    </div>
+                    <div class="col card-3">
+                        <h3>Testing and QA</h3>
+                         <ul>
+                            <li>Test Automation</li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="col card-head4">
+                        <img src="{{ url_for('static',filename='images/logo-3.png') }}" style="position: relative;top: -1rem;" alt="">
+                    </div>
+                    <div class="col card-4">
+                        <h3>Infrastructure Managed Service</h3>
+                         <ul>
+                            <li>Cloud Infrastructure Managed</li>
+                            <li>IT Managed Service</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row color-bar" style="margin: 30px auto;">
+                <div class="col" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+                <div class="col">&nbsp;</div>
+                <div class="col" style="border-top-right-radius: 20px;border-bottom-right-radius: 20px;">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

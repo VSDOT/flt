@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/azure/azure_style.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
+        integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: #c3cde5;">
+    <div class=".model-fullscreen-xxl-down">
+        <section class="PreLoader">
+            <div id="PreLoader"></div>
+        </section>
+        <header class="row title">
+            <div class="col d-flex align-items-center justify-content-center">
+                <h1 class="azure align-items-center justify-content-center" style="color: white;">AZURE</h1>
+                <img src="{{ url_for('static',filename='images/azure.png') }}"  class="logo mt-3" style="width: 3rem;height: 3rem;" alt="">
+                <!-- searchBar -->
+                <div class="input-box d-flex mt-3">
+                    <input type="text" id="searchInput" style="background: none;"/>
+                    <span class="search" style="background: none;">
+                        <i class="uil uil-search search-icon" id="search-icon"></i>
+                    </span>
+                    <i class="uil uil-times close-icon"></i>
+                </div>
+                <!-- searchBar -->
+            </div>
+            <div class="demo-container">
+                <nav class="col d-flex align-items-center justify-content-center mt-1 mb-3">
+                    <div class="col-3"
+                        style="border-top-left-radius: 20px;border-bottom-left-radius: 20px; height: 5px;">
+                        &nbsp;</div>
+                    <div class="col-3" style="height: 5px;">&nbsp;</div>
+                    <div class="col-3" style="height: 5px;">&nbsp;</div>
+                    <div class="col-3"
+                        style="border-top-right-radius: 20px;border-bottom-right-radius: 20px; height: 5px;">
+                        &nbsp;</div>
+                </nav>
+            </div>
+        </header>
+        <!-- NavSection -->
+        <div class="row head-input">
+            <div class="row" style="margin: 10px auto;">
+                <div class="col-sm-3">
+                    <div class="col d-flex">
+                        <a href="{{url_for('providers')}}"><img src="{{ url_for('static',filename='images/back-button.png') }}" alt=""></a>
+                        <a href="{{url_for('home')}}"><img src="{{ url_for('static',filename='images/home-button.png') }}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-9 input-form">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <div style="color: green; text-align: center;">{{ message }}</div>
+                        {% endif %}
+                    {% endfor %}
+                {% endwith %}
+                <form action="/azure" method="POST">
+                    <input type="text" placeholder="Subscription ID" name = "sub_id">
+                    <input type="text" placeholder="Tenant ID" name = "ten_id"><br>
+                    <input type="text" placeholder="Client ID" name = "cli_id">
+                    <input type="text" placeholder="Client Secret" name = "cli_sec"><br>
+                    <button type="submit">Submit</button>
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% for category, message in messages %}
+                            {% if category == 'danger' %}
+                                <div style="color: red;">{{ message }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
+                </div>
+            </div>
+
+        </div>
+        <!-- NavSection -->
+        <section id="content" class="content">
+            <!-- Resource Cards -->
+            <div class="row" style="margin-top: -80px;">
+                <div class="col-sm-12">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        
+                        <div class="card card2 m-4 p-3"
+                            style="width: 12rem;border: 1px solid #007fff; background-color: white; border-radius: 15px; color: white;">
+                            <form action="/resource_group" method="POST">
+                            <h5 style="margin-bottom: 15px; color:#007fff;">Resource Group</h5>
+                            <input type="text" name="resource_group_name" placeholder="Resourse Name"
+                                style="border:1px solid #007fff;border-radius: 5px;padding: 5px 5px;margin-bottom: 5px; width:160px;">
+                            <!-- DropDown -->
+                            <div class="col d-flex align-items-center"
+                                style="justify-content: space-evenly;flex-wrap: wrap;">
+                                <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                <div class="custom-select" style="width:225px;">
+                                    <select id="select1" name="location">
+                                        <option name="option">Location</option>
+                                        <option name="option" value="Central US">Central US</option>
+                                        <option name="option" value="Canada Central">Canada Central</option>
+                                        <option name="option" value="Canada East">Canada East</option>
+                                        <option name="option" value="East Us">East US</option>
+                                        <option name="option" value="East Asia">East Asia</option>
+                                        <option name="option" value="East US 2">East US 2</option>
+                                        <option name="option" value="US Gov Iowa">US Gov Iowa</option>
+                                        <option name="option" value="US Gov Virginia">US Gov Virginia</option>
+                                        <option name="option" value="North Central US">North Central US</option>
+                                        <option name="option" value="South Central US">South Central US</option>
+                                        <option name="option" value="West Central US">West Central US</option>
+                                        <option name="option" value="West US">West US</option>
+                                        <option name="option" value="North Europe">North Europe</option>
+                                        <option name="option" value="West Europe">West Europe</option>
+                                        <option name="option" value="East Asia">East Asia</option>
+                                        <option name="option" value="Southeast Asia">Southeast Asia</option>
+                                        <option name="option" value="Japan East">Japan East</option>
+                                        <option name="option" value="Japan West">Japan West</option>
+                                        <option name="option" value="Brazil South">Brazil South</option>
+                                        <option name="option" value="Brazil Southeast">Brazil Southeast</option>
+                                        <option name="option" value="France Central">France Central</option>
+                                        <option name="option" value="France South">France South</option>
+                                        <option name="option" value="Australia East">Australia East</option>
+                                        <option name="option" value="Australia Southeast">Australia Southeast</option>
+                                        <option name="option" value="Australia Central">Australia Central</option>
+                                        <option name="option" value="Australia Central 2">Australia Central 2</option>
+                                        <option name="option" value="Central India">Central India</option>
+                                        <option name="option" value="South India">South India</option>
+                                        <option name="option" value="West India">West India</option>
+                                        <option name="option" value="Southeast Asia">Southeast Asia</option>
+                                        <option name="option" value="Qatar Cenntral">Qatar Cenntral</option>
+                                        <option name="option" value="Switzerland North">Switzerland North</option>
+                                        <option name="option" value="Switzerland West">Switzerland West</option>
+                                        <option name="option" value="Sweden Central">Sweden Central</option>
+                                        <option name="option" value="UAE Central">UAE Central</option>
+                                        <option name="option" value="UAE North">UAE North</option>
+                                        <option name="option" value="UK West">UK West</option>
+                                        <option name="option" value="UK South">UK South</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- DropDown -->
+                            <div class="col buttons pt-4">
+                                <button type="submit">Create</button>
+                            </div> 
+                        </form>                       
+                        </div>
+                        
+                        <div class="card card3 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Storage Blob</h4>
+                                    <img src="{{ url_for('static',filename='images/Storage-blog.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button1">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card4 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-5 d-flex align-items-center" style="justify-content: space-around;">
+                                <h4>VM</h4>
+                                <img src="{{ url_for('static',filename='images/VM.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button2">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card5 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>V Net</h4>
+                                <img src="{{ url_for('static',filename='images/V-net.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button3">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-2 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-center">
+
+                        <div class="card card6 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Container Register</h4>
+                                <img src="{{ url_for('static',filename='images/container-ref.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button4">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card7 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>AKS</h4>
+                                <img src="{{ url_for('static',filename='images/AKS.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button5">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Container Instance</h4>
+                                <img src="{{ url_for('static',filename='images/container-ins.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button6">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card2 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>App Service</h4>
+                                <img src="{{ url_for('static',filename='images/App.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button7">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-3 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-center">
+
+                        <div class="card card6 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Data Factory</h4>
+                                <img src="{{ url_for('static',filename='images/Data-factory.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button8">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card7 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>SQL Server</h4>
+                                <img src="{{ url_for('static',filename='images/sql-server.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button9">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Elastic Poll</h4>
+                                <img src="{{ url_for('static',filename='images/elastic.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button10">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card2 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>Function App</h4>
+                                <img src="{{ url_for('static',filename='images/function-app.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button11">Create</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CardRow-4 -->
+                    <div class="row mt-4 d-flex align-items-center justify-content-left" style="margin-left: 12.3rem;">
+
+                        <div class="card card2 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4>SQL DataBase</h4>
+                                <img src="{{ url_for('static',filename='images/Sql-database.png') }}" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}" id="anchor-button12">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card7 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-1 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}">Create</a></button>
+                            </div>
+                        </div>
+
+                        <div class="card card8 m-4 p-3"
+                            style="width: 12rem; border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-4 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-5">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}">Create</a></button>
+                            </div>
+                        </div>
+                        <div class="card card2 m-4 p-3"
+                            style="width: 12rem;border: none; background-color: #007fff; border-radius: 15px; color: white;">
+                            <div class="col mt-2 pb-5 d-flex align-items-center"
+                                style="justify-content: space-between;">
+                                <h4></h4>
+                                <img src="#" alt="">
+                            </div>
+                            <div class="col buttons pt-4">
+                                <button type="submit"><a href="{{url_for('azure.resources')}}">Create</a></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Resource Cards -->
+        </section>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            $('select').selectize({
+                sortField: 'text'
+            });
+        });
+    </script>
+    <script src="{{url_for('static',filename='js/azure/azure_index.js')}}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

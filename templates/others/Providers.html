@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Providers</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/Providers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/pro_media.css') }}">
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+      crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- ProviderCards -->
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row">
+            <!-- Nav Section -->
+            <div class="col">
+                <nav class="navbar navbar-expand-xl pe-3">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{{url_for('home')}}">
+                            <img src="{{ url_for('static',filename='images/aslkjcdnsacsa..png') }}">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{url_for('service')}}">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{url_for('about')}}">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('contact')}}">Contect</a>
+                                </li>
+                                 <!-- Example split danger button -->
+                            <div class="dropdown" style="display: flex;align-items: center;">
+                                <button class="" style="background: none;border: 0;outline: 0;"><i
+                                        class="fa-solid fa-user"></i></button>
+                                <div class="dropdown-content">
+                                    <a href="{{url_for('register')}}">Register</a>
+                                    <a href="{{url_for('login')}}">LogIn</a>
+                                </div>
+                            </div>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+                <!-- Nav Section -->
+                <!-- CardSection -->
+                <div class="col mb-4 d-flex d-block d-md-none align-items-center justify-content-center">
+                    <h1 style="font-size: 60px; font-weight: 700;">Providers</h1>
+                </div>
+                <div class="col Cards">
+                    <div class="col-md-12 CardCol1 d-flex align-items-center justify-content-center">
+                        <div class="card col-md-4 mt-3" id="card1">
+                            <div class="card-body" id="card-body1">
+                                <button type="button" class="btn" style="background: none"><h3 style="color: white;" class="card-link">Azure</h3></button><br>
+                                <button type="button" class="btn btn-1 bg-white"><a href="{{url_for('azure.credential')}}" class="card-link">Create Resource</a></button>
+                            </div>
+                        </div>
+                        <div class="card col-md-4" id="card2">
+                            <div class="col provider d-flex d-none d-md-block align-items-center justify-content-center">
+                                <div class="col bg-white pro_head mb-4 d-flex align-items-center justify-content-center">
+                                    <h1>Providers</h1>
+                                </div>
+                                </div>
+                            <div class="card-body" id="card-body2">
+                                <button type="button" class="btn" style="background: none"><h3 style="color: white;" class="card-link">AWS</h3></button><br>
+                                <button type="button" class="btn btn-2 bg-white"><a href="{{url_for('aws.credential')}}"  class="card-link">Create Resource</a></button>
+                            </div>
+                        </div>
+                        <div class="card col-md-4 mt-3" id="card3">
+                            <div class="card-body" id="card-body3">
+                                <button type="button" class="btn" style="background: none"><h3 style="color: white;" class="card-link">Google Cloud</h3></button><br>
+                                <button type="button" class="btn btn-3 bg-white"><a href="{{url_for('gcp.credential')}}" class="card-link">Create Resource</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CardSection -->
+            </div>
+        </div>
+        <script src="{{url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devops Automation</title>
+    <script src="https://kit.fontawesome.com/4723418bde.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/others/style.css') }}">
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+         crossorigin="anonymous">
+</head>
+
+<body>
+    <div class=".model-fullscreen-xxl-down">
+    <!-- <div class="bg_image"></div> -->
+        <!-- MainContent -->
+        <div class="row ContentBox1">
+            <div class="row pb-5">
+                <nav class="navbar navbar-expand-xl ps-5">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{url_for('static',filename='images/aslkjcdnsacsa..png')}}">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{url_for('service')}}">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{url_for('providers')}}">Providers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{url_for('about')}}">About us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{url_for('contact')}}">Contact</a>
+                                </li>
+                                <!-- Example split danger button -->
+                                <div class="dropdown" style="display: flex;align-items: center;">
+                                    <button class="" style="background: none;border: 0;outline: 0;"><i
+                                            class="fa-solid fa-user"></i></button>
+                                    <div class="dropdown-content">
+                                        <a href="{{url_for('register')}}">Register</a>
+                                        <a href="{{url_for('login')}}">LogIn</a>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+            <div class="col-md-6 content" style="padding-left: 130px;padding-top: 50px;">
+                <h3>One Step Solution To</h3>
+                <span style="color: #0026ab;">DevOps Clouds Services,</span><br>
+                <h5>Since 2023 We help in services providers</h5>
+                <img src="{{url_for('static',filename='images/Partner.webp')}}">
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <img src="{{url_for('static',filename='images/gif.gif')}}" class="gif_img">
+            </div>
+        </div>
+        <!-- MainContent -->
+        <!-- ContentBox-2 -->
+        <div class="row ContentBox2">
+            <div class="row-sm-12">
+                <nav class="col d-flex align-items-center mt-1 mb-5" style="background-color: #6fc9e7;height: 5px;position: relative;">
+                <div class="col-3"
+                    style=" height: 5px;">
+                    &nbsp;</div>
+                <div class="col-3" style="height: 5px; ">&nbsp;</div>
+                <div class="col-3" style="height: 5px; ">&nbsp;</div>
+                <div class="col-3"
+                    style="height: 5px; ">
+                    &nbsp;</div>
+            </nav>
+            </div>
+            <div class="col-md-6 Content-Sention">
+                <div class="row ms-3">
+                    <p style="font-size: 25px;text-align: left; margin-left: 50px;color: white;">
+                        <span>CloudGarage</span> is a product & service <br> based company located in india that <br>
+                        helps bussinesses enhance their <br> productivity and performance with <br> analytical processes
+                        .
+                    </p>
+                    <h4 style="margin-left: 50px;color: white;">The Company Delivers App <br>Development,AI,custom
+                        Software,<br>developmnet,automation,etc.</h4>
+                </div>
+                <div class="row" style="width: 130%;">
+                    <nav class="col d-flex align-items-center justify-content-center mt-5 mb-1" style="background-color: #6fc9e7;height: 5px;position: relative;">
+                    <div class="col"
+                        style="height: 5px;">
+                        &nbsp;</div>
+                    <div class="col" style="height: 5px; ">&nbsp;</div>
+                    <div class="col" style="height: 5px; ">&nbsp;</div>
+                    <div class="col"
+                        style="height: 5px; ">
+                        &nbsp;</div>
+                </nav>
+                </div>
+                <div class="row aws ms-3">
+                    <div class="col">
+                        <div class="row">
+                            <h2 style="color: white;text-decoration: underline;">Official Providers Of</h2>
+                            <!-- <hr style="background-color: #6fc9e7; height: 6px;width: 50%;"> -->
+                        </div>
+                        <div class="row" style="display: flex; padding-left: 40px;gap: 10px;">
+                            <img src="{{url_for('static',filename='images/gcp.png')}}" alt="">
+                            <img src="{{url_for('static',filename='images/aws.png')}}" alt="">
+                        </div>
+                        <div class="row" style="display: flex; padding-left: 100px;padding-top: 20px;">
+                            <img src="{{url_for('static',filename='images/azure.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 cardCol1 d-flex align-items-center justify-content-center">
+                <!-- CardCol1 -->
+                <div class="card" id="card1" style="width: 15rem; height: 22rem;">
+                    <img src="{{url_for('static',filename='images/gcp.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body" style="text-align: left;">
+                        <ul>
+                            <li>We use the GCP credential of the client and deploy the resource they Need.</li>
+                             <li>We use that Credential Securely and Confidentially.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- CardCol1 -->
+            </div>
+            <div class="col-md-3 cardCol2 d-flex align-items-center justify-content-center">
+                <!--CardCol2  -->
+                <!-- Card1 -->
+                <div class="card mb-3" id="card2" style="width: 15rem;height: 22rem;">
+                    <img src="{{url_for('static',filename='images/gcp.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body" style="text-align: left;">
+                        <ul>
+                            <li>We use the AWS credential of the client and deploy the resource they Need.</li>
+                             <li>We use that Credential Securely and Confidentially.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Card1 -->
+                <!-- Card2 -->
+                <div class="card" id="card3" style="width: 15rem;height: 22rem;">
+                    <img src="{{url_for('static',filename='images/azure.png')}}" class="card-img-top" alt="...">
+                    <div class="card-body" style="text-align: left;">
+                        <ul>
+                            <li>We use the Azure credential of the client and deploy the resource they Need.</li>
+                             <li>We use that Credential Securely and Confidentially.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Card2 -->
+                <!--CardCol2  -->
+            </div>
+            <div class="row-sm-12">
+                <nav class="col d-flex align-items-center justify-content-center mt-5 mb-1" style="background-color: #6fc9e7;height: 5px;position: relative;">
+                <div class="col-3"
+                    style=" height: 5px;">
+                    &nbsp;</div>
+                <div class="col-3" style="height: 5px; ">&nbsp;</div>
+                <div class="col-3" style="height: 5px; ">&nbsp;</div>
+                <div class="col-3"
+                    style="height: 5px;">
+                    &nbsp;</div>
+            </nav>
+            </div>
+        </div>
+        <!-- ContentBox-2 -->
+        <!-- ContentBox-3 -->
+        <div class="row">
+            <div class="col-sm-12 content-msg">
+                <div class="background-round">&nbsp</div>
+                <div class="para" style="display: flex;gap: 30px;">
+                    <h2>
+                        Custom Devops Cloud IT Solutions for Your <br> business, Keeps Your business safe .
+                    </h2>
+                    <div class="img img-shape">
+                        <img src="{{url_for('static',filename='images/Polygon_2.png')}}" class="img-1"  alt="">
+                        <img src="{{url_for('static',filename='images/Polygon_1.png')}}" class="img-2"  alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row contect-form">
+            <div class="col-sm-6">
+                <div class="row header">
+                    <h2>Are you Ready for a better , More <br> Productive business ?</h2>
+                </div>
+                <div class="row address">
+                    <div class="col">
+                        <div class="col d-flex">
+                            <i class="fa-solid fa-envelope" style="margin-right: 20px;font-size: 30px;"></i>
+                            <div class="col">
+                                <h3>Email</h3>
+                                <p>Cloud123@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex">
+                            <i class="fa-solid fa-location-dot fa-bounce" style="margin-right: 20px;font-size: 30px;"></i>
+                            <div class="col">
+                                <h3>Office Address</h3>
+                                <p>Cloud Garage LLP <br> Perambalur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <i class="fa-solid fa-phone" style="margin-right: 20px;font-size: 30px;"></i>
+                        <div class="col">
+                            <h3>Call Us</h3>
+                            <p>988808889</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <form action="">
+                    <div class="row">
+                        <div class="col">
+                            <input class="ps-2" type="text" placeholder="Name">
+                        </div>
+                        <div class="col">
+                            <input class="ps-2" type="email" name="" id="" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="ps-2" type="text" placeholder="Phone Number">
+                        </div>
+                        <div class="col">
+                            <input class="ps-2" type="text" name="" id="" placeholder="Select Your Subject">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    </div>
+                    <div class="row">
+                        <button type="button">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- ContentBox-3 -->
+        <!-- googleMap -->
+        <div class="row Google-Map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.283943884566!2d78.86326347387734!3d11.240510450464523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bab1bd69cdd255f%3A0x767e4a62853d4127!2scloud%20garage%20llp!5e0!3m2!1sen!2sin!4v1690328186661!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- googleMap -->
+        <!-- ContentBox-6 -->
+        <div class="row CopyRights">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-left justify-content-center"
+                    style="flex-direction: column;margin-top: 70px;font-size: 20px;padding-left: 100px;">
+                    <img src="{{url_for('static',filename='images/cloud_logo.png')}}" class="cloud_logo" alt="..." style="width: 150px;"><br>
+                    <div class="col">
+                        <h3>One Step Solution To</h3>
+                        <span>DevOps Cloud Services,</span>
+                        <p>Since 2023 We help in services providers</p>
+                    </div>
+                </div>
+                <div class="col-md-6 pt-5 pb-5 d-flex align-items-center justify-content-center">
+                    <div class="col d-flex align-items-center justify-content-center"
+                        style="line-height: 10px;flex-direction: column;">
+                        <h3 class="pb-3">Services</h3><br>
+                        <p>Softwere Developments</p><br>
+                        <p>Web Developments</p><br>
+                        <p>Mobile Developments</p><br>
+                        <p>DevOps Consulting</p>
+                    </div>
+                    <div class="col d-flex align-items-center justify-content-center pb-4"
+                        style="line-height: 10px;flex-direction: column;">
+                        <h3 class="pb-3">Providers</h3><br>
+                        <p>AWS</p><br>
+                        <p>Google cloud</p><br>
+                        <p>Azure</p><br>
+                    </div>
+                </div>
+            </div>
+            <hr class="ps-2 pe-2">
+            <div class="row d-flex align-items-center justify-content-center"
+                style="flex-direction: column;line-height: 10px;">
+                <div class="col d-flex align-items-center justify-content-center" style="font-size: 30px;">
+                    <i class="fa-brands fa-facebook"><a href="#"></a></i>&nbsp;<i class="fa-brands fa-linkedin"><a
+                            href="#"></a></i>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center" style="flex-direction: column;">
+                    <h3>Privacy & policy</h3><br>
+                    <p>@ 2023 Cloud Garage All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+        <!-- ContentBox-6 -->
+    </div>
+    <script src="{{ url_for ('static',filename='bootstrap/js/bootstrap.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

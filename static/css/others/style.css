@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* Normalized css */
+
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+ html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+     ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+    margin: 0;
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+    display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  
+  /* Grouping content
+     ========================================================================== */
+  
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+  
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /* Text-level semantics
+     ========================================================================== */
+  
+  /**
+   * Remove the gray background on active links in IE 10.
+   */
+  
+  a {
+    background-color: transparent;
+  }
+  
+  /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+  
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+  
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+  
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+  
+  /**
+   * Add the correct font size in all browsers.
+   */
+  
+  small {
+    font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+  
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  
+  sub {
+    bottom: -0.25em;
+  }
+  
+  sup {
+    top: -0.5em;
+  }
+  
+  /* Embedded content
+     ========================================================================== */
+  
+  /**
+   * Remove the border on images inside links in IE 10.
+   */
+  
+  img {
+    border-style: none;
+  }
+  
+  /* Forms
+     ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  /* button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  } */
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  
+  /**
+   * Correct the padding in Firefox.
+   */
+  
+  fieldset {
+    padding: 0.35em 0.75em 0.625em;
+  }
+  
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+  
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+  
+  /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+  
+  progress {
+    vertical-align: baseline;
+  }
+  
+  /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+  
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+  
+  /* [type="search"] {
+    -webkit-appearance: textfield; 
+    outline-offset: -2px; 
+  } */
+  
+  /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+  
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+  
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+  
+  /* Interactive
+     ========================================================================== */
+  
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+    display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+    display: list-item;
+  }
+  
+  /* Misc
+     ========================================================================== */
+  
+  /**
+   * Add the correct display in IE 10+.
+   */
+  
+  template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+    display: none;
+  }
+/* Normalized css */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.bg_image {
+    background-color: blue;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    width: 40%;
+    position: fixed;
+    float: right;
+    /* margin-left: 60%; */
+    left: 70%;
+    z-index: -1;
+}
+
+/* Register and signIn burron */
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: blue;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 5px;
+    top: 40px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/* Register and signIn burron */
+.ContentBox1 nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+.ContentBox1 nav ul {
+    font-size: 20px;
+    color: black;
+}
+
+.ContentBox1 nav ul li {
+    margin-right: 20px;
+}
+
+.ContentBox1 nav ul li a {
+    color: gray;
+}
+
+.gif_img {
+    width: 500px;
+    height: 400px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.ContentBox1 {
+    padding-bottom: 80px;
+}
+
+.content {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.content span {
+    font-size: 35px;
+    font-weight: 600;
+    color: gold;
+    margin-bottom: -15px;
+}
+
+.content img {
+    width: 200px;
+    height: 60px;
+}
+
+/* ContentBox2 */
+
+.aws {
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.aws img {
+    width: 100px;
+    height: 60px;
+    margin-top: 2rem;
+}
+
+.ContentBox2 {
+    background-color: #010f40;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+}
+
+#card1 {
+    border-radius: 20px;
+    border: 4px solid #6fc9e7;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: -50px;
+    background-color: #010f40;
+}
+
+#card2 {
+    border-radius: 20px;
+    border: 4px solid #6fc9e7;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    background-color: #010f40;
+}
+
+#card3 {
+    border-radius: 20px;
+    border: 4px solid #6fc9e7;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    background-color: #010f40;
+}
+
+.card img {
+    width: 80px;
+    height: 60px;
+    margin-left: 78px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cardCol2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* margin-left: -70px; */
+    margin-top: 20px;
+}
+
+/* ContentBox2 */
+/* img-shape animation */
+.img-shape .img-1 {
+    animation: rotate-animation 5s infinite linear;
+}
+@keyframes rotate-animation {
+0% {
+transform: rotate(-0deg);
+}
+50% {
+transform: rotate(180deg);
+}
+100% {
+transform: rotate(-360deg);
+}
+}
+
+.img-shape .img-2 {
+    animation: rotate-animation 5s infinite linear;
+}
+@keyframes rotate-animation {
+0% {
+transform: rotate(0deg);
+}
+50% {
+transform: rotate(-180deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+/* img-shape animation */
+
+/* ContentBox3 */
+.contect-form {
+    position: relative;
+    padding: 80px 40px;
+    background-color: rgb(212, 208, 208, 0.5);
+}
+
+.content-msg .para {
+    position: relative;
+    height: 20rem;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: blue;
+}
+
+.background-round {
+    position: absolute;
+    background-image: linear-gradient(rgb(242, 190, 237), rgb(222, 226, 248));
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    z-index: -1;
+    left: 5rem;
+    margin-top: -80px;
+}
+
+.contect-form .header {
+    position: relative;
+    left: 30px;
+    top: 10px;
+}
+
+.contect-form .address {
+    position: relative;
+    top: 50px;
+    left: 30px;
+}
+
+.contect-form form {
+    position: relative;
+    padding-top: 50px;
+}
+
+.contect-form form textarea {
+    justify-content: center;
+    align-items: center;
+    width: 35.5rem;
+    height: 5rem;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border: 2px solid gray;
+}
+
+.contect-form form input {
+    width: 15rem;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 2px solid gray;
+}
+
+.contect-form form button {
+    width: 35.5rem;
+    margin-left: 10px;
+    height: 40px;
+    border: 0;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+/* ContentBox3 */
+/* ContentBox5 */
+/* .MapImg {
+    background-image: url('images/map.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+} */
+
+/* ContentBox5 */
+/* GoogleMap */
+.Google-Map {
+    position: relative;
+    /* width: 100%; */
+}
+
+/* GoogleMap */
+/* ContentBox6 */
+.CopyRights {
+    background-color: #010f40;
+    color: white;
+}
+
+/* ContentBox6 */
+
+/* MediaScreen */
+@media only screen and (max-width:600px) {
+    .formControl textarea {
+        width: 300px;
+    }
+
+    .Content-Sention {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .aws {
+        margin-bottom: 10rem;
+    }
+
+    .Form-inputs {
+        position: absolute;
+    }
+
+}
+
+/* MediaScreen */

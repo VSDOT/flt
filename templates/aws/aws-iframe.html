@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/aws/aws-iframe.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
+        crossorigin="anonymous">
+</head>
+
+<body style="background-color:white;overflow-x: hidden;">
+    <div class=".model-fullscreen-xxl-down">
+        <div class="row">
+            <div class="col-sm-3 d-none d-sm-block Button-frame">
+                <div class="col" style="position:relative;left: 0;">
+                    <a href="{{url_for('aws.credential')}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49" fill="none">
+                            <ellipse cx="12.25" cy="12.25" rx="12.25" ry="12.25"
+                                transform="matrix(4.37114e-08 -1 -1 -4.37114e-08 40.833 36.75)" fill="#BEC3C9" />
+                            <path
+                                d="M16.033 24.5C16.033 17.5688 21.6518 11.95 28.583 11.95C35.5142 11.95 41.133 17.5688 41.133 24.5C41.133 31.4312 35.5142 37.05 28.583 37.05C21.6518 37.05 16.033 31.4312 16.033 24.5Z"
+                                stroke="#7E869E" stroke-opacity="0.25" stroke-width="0.6" />
+                            <path
+                                d="M16.333 38.6449C18.816 40.0785 21.6326 40.8332 24.4997 40.8332C27.3668 40.8332 30.1834 40.0785 32.6663 38.6449C35.1493 37.2114 37.2112 35.1495 38.6448 32.6665C40.0783 30.1835 40.833 27.3669 40.833 24.4998C40.833 21.6327 40.0783 18.8162 38.6448 16.3332C37.2112 13.8502 35.1493 11.7883 32.6663 10.3548C30.1834 8.92121 27.3668 8.1665 24.4997 8.1665C21.6326 8.1665 18.816 8.92121 16.333 10.3548"
+                                stroke="#FB9702" stroke-width="3.2" />
+                            <path
+                                d="M4.08301 24.4998L2.83362 23.5003L2.03401 24.4998L2.83362 25.4993L4.08301 24.4998ZM22.458 26.0998C23.3417 26.0998 24.058 25.3835 24.058 24.4998C24.058 23.6162 23.3417 22.8998 22.458 22.8998V26.0998ZM11.0003 13.292L2.83362 23.5003L5.3324 25.4993L13.4991 15.291L11.0003 13.292ZM2.83362 25.4993L11.0003 35.7077L13.4991 33.7087L5.3324 23.5003L2.83362 25.4993ZM4.08301 26.0998H22.458V22.8998H4.08301V26.0998Z"
+                                fill="#FB9702" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="col heading">
+                    <div class="col" style="display: flex;justify-content: center;align-items: center;gap: 10px;">
+                        <span style="font-size: 40px;">AWS</span>
+                        <p style="font-size: 20px; color: gray;margin-top: 30px;">Resource</p>
+                    </div>
+                    <!-- Search Icon -->
+                    <input class="search" type="search" placeholder="Search..." id="SearchButtons"
+                        onkeyup="myFunction()">
+                    <!-- Search Icon -->
+                    <!-- <input type="text" placeholder="Search"> -->
+                </div>
+                <div class="col" style="border:1px solid #EC8C10;">
+                    <div class="col btn-box">
+                        <div class="col">
+                            <a href="{{url_for('aws.vpc')}}" target="frame1" id="button1" class="click-button"> <button><img
+                                        src="{{ url_for('static',filename='images/vpc.png') }}" alt="" style="width: 30px;">VPC</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.ec2')}}" target="frame1" class="your-anchor-class" id="button2"> <button><img
+                                        src="{{ url_for('static',filename='images/EC2.png') }}" alt="" style="width: 30px;">EC2</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.s3')}}" target="frame1" class="openAppLink" id="button3"> <button><img
+                                        src="{{ url_for('static',filename='images/s3-bucket.png') }}" alt="" style="width: 30px;">S3 Bucket</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.rds')}}" target="frame1" id="button4"> <button><img src="{{ url_for('static',filename='images/rds.png') }}" alt=""
+                                        style="width: 30px;">RDS</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.eks')}}" target="frame1" id="button5"> <button><img src="{{ url_for('static',filename='images/eks.png') }}" alt=""
+                                        style="width: 30px;">EKS</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.ecr')}}" target="frame1" id="button6"> <button><img src="{{ url_for('static',filename='images/ecr.png') }}"
+                                        alt="" style="width: 30px;">ECR</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.cloudwatch')}}" target="frame1" id="button7"> <button><img
+                                        src="{{ url_for('static',filename='images/cloud-watch.png') }}" alt="" style="width: 30px;">Cloud
+                                    Watch</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.dynamodb')}}" target="frame1" id="button8"> <button><img
+                                        src="{{ url_for('static',filename='images/DynamoDB.png') }}" alt="" style="width: 30px;">Dynamo DB</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.ecs_service')}}" target="frame1" id="button9"> <button><img
+                                        src="{{ url_for('static',filename='images/ecs.png') }}" alt="" style="width: 30px;">ECS Service</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.ecs_cluster')}}" target="frame1" id="button10"> <button><img
+                                        src="{{ url_for('static',filename='images/ecs.png') }}" alt="" style="width: 30px;">ECS Cluster</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.api')}}" target="frame1" id="button11"> <button><img src="{{ url_for('static',filename='images/api.png') }}"
+                                        alt="" style="width: 30px;">API Getway</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.Lambda')}}" target="frame1" id="button12"> <button><img src="{{ url_for('static',filename='images/lambda.png') }}"
+                                        alt="" style="width: 30px;">Lambda</button></a>
+                        </div>
+                        <div class="col">
+                            <a href="{{url_for('aws.sns')}}" target="frame1" id="button13"> <button><img src="{{ url_for('static',filename='images/sns.png') }}" alt=""
+                                        style="width: 30px;">SNS</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col d-block d-sm-none">
+               <a href="../ContainerInstance/C_Instance.html" >ahamed</a>
+               <a href="../SqlDataBase/SqlDataBase.html">ahamed</a>
+               <a href="../Storage_blob/Storage_blob.html">ahamed</a>
+            </div> -->
+            <div class="col-sm-9 iframe-box">
+                <iframe src="" class="d-none d-sm-block" name="frame1" width="100%" height="610rem"
+                    style="border: 0;outline: 0;background: none;position: relative;z-index: 1;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row top-img" style="float: left;position: absolute;top: 18rem;">
+        <img src="{{ url_for('static',filename='images/Vector.png') }}" alt="" style="width: 80rem;height:40rem;">
+    </div>
+    <div class="row bottom-img" style="position: absolute;z-index: -1;right: 0;top: 37.8rem;bottom: 0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="314" height="323" viewBox="0 0 314 323" fill="none">
+            <path d="M315 0L0 268.5C11.3333 274 38.1 287.1 54.5 295.5C70.9 303.9 94.6667 317.667 104.5 323.5H315V0Z"
+                fill="#254251" />
+        </svg>
+    </div>
+    </div>
+    <script src="{{url_for('static', filename="js/aws/aws-iframe.js")}}"></script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
